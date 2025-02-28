@@ -8,10 +8,20 @@
           "min": 0,
           "max": 10
         },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
+        "experience": {
+          "value": 0
+        },
+        "age": {
+          "value": 0
+        },
+        "height": {
+          "value": 0
+        },
+        "weight": {
+          "value": 0
+        },
+        "sex": {
+          "value": ""
         },
         "biography": ""
       }

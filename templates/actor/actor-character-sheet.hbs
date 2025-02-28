@@ -22,6 +22,12 @@
           </div>
         </div>
 
+        <div class="resource flex-group-center">
+          <label for="system.experience.value" class="resource-label">Experience</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.experience.value" value="{{system.experience.value}}" data-dtype="Number"/>
+          </div>
+        </div>
 
         <div class="resource flex-group-center">
           <label for="system.attributes.level.value" class="resource-label">Level</label>
@@ -31,6 +37,43 @@
         </div>
 
       </div>
+      <div class="resources grid grid-5col">
+{{!-- TODO broken
+          <div class="resource flex-group-center">
+          <label for="system.sex.value" class="resource-label">Sex</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <select type="text" name="system.sex.value" value="{{system.sex.value}}"/>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          </div>
+        </div>
+--}}
+          <div class="resource flex-group-center">
+          <label for="system.age.value" class="resource-label">Age</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.age.value" value="{{system.age.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+      
+
+
+          <div class="resource flex-group-center">
+          <label for="system.height.value" class="resource-label">Height</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.height.value" value="{{system.height.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+      
+
+          <div class="resource flex-group-center">
+          <label for="system.weight.value" class="resource-label">Weight</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.weight.value" value="{{system.weight.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+</div>
     </div>
   </header>
 
