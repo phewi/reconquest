@@ -41,8 +41,8 @@
   "manifest": "https://raw.githubusercontent.com/phewi/reconquest/refs/heads/main/system.json",
   "download": "This must link to a .zip file of the current version",
   "background": "systems/reconquest/assets/anvil-impact.png",
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "gridDistance": 3,
+  "gridUnits": "mi",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }

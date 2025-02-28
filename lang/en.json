@@ -5,7 +5,7 @@
       "Con": { "long": "Constitution", "abbr": "con" },
       "Dex": { "long": "Dexterity", "abbr": "dex" },
       "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
+      "Wil": { "long": "Willpower", "abbr": "wil" },
       "Cha": { "long": "Charisma", "abbr": "cha" }
     },
     "SheetLabels": {

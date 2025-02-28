@@ -9,7 +9,7 @@ RECON_QUEST.abilities = {
   dex: 'RECON_QUEST.Ability.Dex.long',
   con: 'RECON_QUEST.Ability.Con.long',
   int: 'RECON_QUEST.Ability.Int.long',
-  wis: 'RECON_QUEST.Ability.Wis.long',
+  wil: 'RECON_QUEST.Ability.Wil.long',
   cha: 'RECON_QUEST.Ability.Cha.long',
 };
 
@@ -18,6 +18,6 @@ RECON_QUEST.abilityAbbreviations = {
   dex: 'RECON_QUEST.Ability.Dex.abbr',
   con: 'RECON_QUEST.Ability.Con.abbr',
   int: 'RECON_QUEST.Ability.Int.abbr',
-  wis: 'RECON_QUEST.Ability.Wis.abbr',
+  wil: 'RECON_QUEST.Ability.Wil.abbr',
   cha: 'RECON_QUEST.Ability.Cha.abbr',
 };
