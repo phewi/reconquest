@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/*custom*/
+.combatstatnarrow-label{
+  width:100px !important;
+}
+.combatstatnarrow-value{
+  width:33px !important;
+  flex:none;
+}
 /* Global styles */
+
 .window-app {
   font-family: "Roboto", sans-serif;
 }

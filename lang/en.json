@@ -8,6 +8,15 @@
       "Wil": { "long": "Willpower", "abbr": "wil" },
       "Cha": { "long": "Charisma", "abbr": "cha" }
     },
+    "Combat_Statistics": {
+      "Baseov": { "long": "Base Offensive Value", "abbr": "baseov" },
+      "Basedvme": { "long": "Base Defensive Value Mêlee", "abbr": "basedvme" },
+      "Basedvmi": { "long": "Base Defensive Value Missile", "abbr": "basedvmi" },
+      "Armordv": { "long": "Armor Defensive Value", "abbr": "armordv" },
+      "Helmetdv": { "long": "Helmet Defensive Value", "abbr": "helmetdv" },
+      "Shielddvme": { "long": "Shield Defensive Value Mêlee", "abbr": "shielddvme" },
+      "Shielddvmi": { "long": "Shield Defensive Value Missile", "abbr": "shielddvmi" }
+    },
     "SheetLabels": {
       "Actor": "ReconQuest Actor Sheet",
       "Item": "ReconQuest Item Sheet"
