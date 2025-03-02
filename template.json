@@ -55,7 +55,7 @@
           "value": 0
         },
         
-      "conditions"{
+      "conditions":{
         "afraid":{
           "value": 0
         },
@@ -166,3 +166,4 @@
       }
     }
   }
+}
