@@ -94,9 +94,11 @@ export class ReconQuestActor extends Actor {
     }
 
     // Add level for easier access, or fall back to 0.
-    if (data.attributes.level) {
+    //disabled, breaks charsheet for some reason
+ /*   if (data.attributes.level) {
       data.lvl = data.attributes.level.value ?? 0;
     }
+    else data.lvl = 1;*/
   }
 
   /**
