@@ -1,9 +1,6 @@
 {
   "Actor": {
-    "types": [
-      "character",
-      "npc"
-    ],
+    "types": ["character", "npc"],
     "templates": {
       "base": {
         "health": {
@@ -11,130 +8,62 @@
           "min": 0,
           "max": 10
         },
-        "experience": {
-          "value": 0
+        "power": {
+          "value": 5,
+          "min": 0,
+          "max": 5
         },
-        "age": {
-          "value": 0
-        },
-        "height": {
-          "value": 0
-        },
-        "weight": {
-          "value": 0
-        },
-        "sex": {
-          "type": "string",
-          "default": ""
-        },
-        "combatrole": {
-          "type": "string"
-        },
-        "size": {
-          "type": "string"
-        },
-        "baseov": {
-          "value": 0
-        },
-        "basedvme": {
-          "value": 0
-        },
-        "basedvmi": {
-          "value": 0
-        },
-        "armordv": {
-          "value": 0
-        },
-        "helmetdv": {
-          "value": 0
-        },
-        "shielddvme": {
-          "value": 0
-        },
-        "shielddvmi": {
-          "value": 0
-        },
-        
-      "conditions":{
-        "afraid":{
-          "value": 0
-        },
-        "blinded":{
-          "value": 0
-        },
-        "encumbered":{
-          "value": 0
-        },
-        "entangled":{
-          "value": 0
-        },
-        "helpless":{
-          "value": 0
-        },
-        "poisoned":{
-          "value": 0
-        },
-        "seriouslyinjured":{
-          "value": 0
-        },
-        "sick":{
-          "value": 0
-        },
-        "soakingwet":{
-          "value": 0
-        },
-        "stunned":{
-          "value": 0
-        },
-        "tired":{
-          "value": 0
-        },
-        "submerged":{
-          "value": 0
-        }
-
-
-      },
-      "biography": ""
-      },
-      "character": {
-        "templates": [
-          "base"
-        ],
-        "attributes": {
-          "level": {
-            "value": 1
-          }
-        },
-        "abilities": {
-          "str": {
-            "value": 10
-          },
-          "dex": {
-            "value": 10
-          },
-          "con": {
-            "value": 10
-          },
-          "int": {
-            "value": 10
-          },
-          "wil": {
-            "value": 10
-          },
-          "cha": {
-            "value": 10
-          }
-        }
-      },
-      "npc": {
-        "templates": [
-          "base"
-        ],
-        "cr": 0
+        "biography": ""
       }
     },
-"Item": {
+    "character": {
+      "templates": ["base"],
+      "attributes": {
+        "level": {
+          "value": 1
+        }
+      },
+      "abilities": {
+        "str": {
+          "value": 10
+        },
+        "dex": {
+          "value": 10
+        },
+        "con": {
+          "value": 10
+        },
+        "int": {
+          "value": 10
+        },
+        "wil": {
+          "value": 10
+        },
+        "cha": {
+          "value": 10
+        }
+      },
+        "conditions": {
+          "afraid": { "value": 0 },
+          "blinded": { "value": 0 },
+          "encumbered": { "value": 0 },
+          "entangled": { "value": 0 },
+          "helpless": { "value": 0 },
+          "poisoned": { "value": 0 },
+          "seriouslyinjured": { "value": 0 },
+          "sick": { "value": 0 },
+          "soakingwet": { "value": 0 },
+          "stunned": { "value": 0 },
+          "tired": { "value": 0 },
+          "submerged": { "value": 0 }
+        }
+    },
+    "npc": {
+      "templates": ["base"],
+      "cr": 0
+    }
+  },
+  "Item": {
     "types": ["item", "feature", "spell"],
     "templates": {
       "base": {
@@ -153,7 +82,6 @@
     "spell": {
       "templates": ["base"],
       "spellLevel": 1
-    }
     }
   }
 }
