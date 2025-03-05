@@ -1,6 +1,9 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": [
+      "character",
+      "npc"
+    ],
     "templates": {
       "base": {
         "health": {
@@ -17,7 +20,9 @@
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "attributes": {
         "level": {
           "value": 1
@@ -43,44 +48,62 @@
           "value": 10
         }
       },
-        "conditions": {
-          "afraid": { "value": 0 },
-          "blinded": { "value": 0 },
-          "encumbered": { "value": 0 },
-          "entangled": { "value": 0 },
-          "helpless": { "value": 0 },
-          "poisoned": { "value": 0 },
-          "seriouslyinjured": { "value": 0 },
-          "sick": { "value": 0 },
-          "soakingwet": { "value": 0 },
-          "stunned": { "value": 0 },
-          "tired": { "value": 0 },
-          "submerged": { "value": 0 }
-        }
+      "conditions": {
+        "afraid": {"value": 0},
+        "blinded": {"value": 0},
+        "encumbered": {"value": 0},
+        "entangled": {"value": 0},
+        "helpless": {"value": 0},
+        "poisoned": {"value": 0},
+        "seriouslyinjured": {"value": 0},
+        "sick": {"value": 0},
+        "soakingwet": {"value": 0},
+        "stunned": {"value": 0},
+        "tired": {"value": 0},
+        "submerged": {"value": 0}
+      },
+      "currency": {
+        "ap": {"value": 0},
+        "gp": {"value": 0},
+        "sp": {"value": 0},
+        "cp": {"value": 0}
+      }
     },
     "npc": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "cr": 0
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": [
+      "item",
+      "feature",
+      "spell"
+    ],
     "templates": {
       "base": {
         "description": ""
       }
     },
     "item": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "quantity": 1,
       "weight": 0,
       "formula": "d20 + @str.mod + ceil(@lvl / 2)"
     },
     "feature": {
-      "templates": ["base"]
+      "templates": [
+        "base"
+      ]
     },
     "spell": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "spellLevel": 1
     }
   }

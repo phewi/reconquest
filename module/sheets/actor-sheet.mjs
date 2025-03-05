@@ -12,7 +12,7 @@ export class ReconQuestActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['reconquest', 'sheet', 'actor'],
-      width: 600,
+      width: 800,
       height: 800,
       tabs: [
         {
