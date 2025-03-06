@@ -310,7 +310,7 @@
 }
 .reconquest .items-list .item-controls {
   display: flex;
-  flex: 0 0 100px;
+  flex: 0 0 80px;
   justify-content: flex-end;
 }
 .reconquest .items-list .item-controls a {
@@ -360,7 +360,7 @@
   text-align: left;
 }
 .reconquest .item-formula {
-  flex: 0 0 200px;
+  flex: 0 0 90px;
   padding: 0 8px;
 }
 .reconquest .effects .item .effect-source,

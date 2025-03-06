@@ -7,7 +7,6 @@
       "name": "phewi",
       "discord": "phewi"
     }
-
   ],
   "url": "https://github.com/phewi/reconquest",
   "license": "LICENSE.txt",
@@ -17,8 +16,8 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/reconquest/assets/anvil-impact.png",
-      "thumbnail": "systems/reconquest/assets/anvil-impact.png"
+      "url": "systems/reconquest/assets/bg.jpg",
+      "thumbnail": "systems/reconquest/assets/bg.jpg"
     }
   ],
   "version": "2.0.0",
@@ -26,8 +25,12 @@
     "minimum": 11,
     "verified": "12.331"
   },
-  "esmodules": ["module/reconquest.mjs"],
-  "styles": ["css/reconquest.css"],
+  "esmodules": [
+    "module/reconquest.mjs"
+  ],
+  "styles": [
+    "css/reconquest.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -40,9 +43,11 @@
   "socket": false,
   "manifest": "https://raw.githubusercontent.com/phewi/reconquest/refs/heads/main/system.json",
   "download": "This must link to a .zip file of the current version",
-  "background": "systems/reconquest/assets/anvil-impact.png",
-  "gridDistance": 3,
-  "gridUnits": "mi",
+  "background": "systems/reconquest/assets/bg.jpg",
+  "grid": {
+    "distance": 3,
+    "units": "mi"
+  },
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }
