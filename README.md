@@ -2,11 +2,11 @@
 
 ![Foundry v11](https://img.shields.io/badge/foundry-v11-green)
 
-This is ReconQuest for FoundryVTT, my first Foundry game system project. The plan is to have a working system that makes the playing the game possible in Foundry. 🧙
+This is ReconQuest for FoundryVTT, my first Foundry game system project. The plan is to have a working system for the Basic Rules that makes the playing the game possible in Foundry. 🧙
 
 Things to do in descending priority:
 - Have a working character sheet with all the necessary fields
-- Automatically calculate the ability score dependant stuff
+- Automatically calculate the ability score dependant stuff for the character sheet
 - Have a roll dialog for taking in account the modifiers
 - Random encounter / treasure generation
 - ???
