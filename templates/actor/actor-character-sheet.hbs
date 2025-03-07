@@ -36,7 +36,7 @@
               data-dtype="Number" />
           </div>
         </div>
-                <div class="resource flex-group-center">
+        <div class="resource flex-group-center">
           <label for="system.age.value" class="resource-label">Age</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.age.value" value="{{system.age.value}}" data-dtype="Number" />
@@ -48,29 +48,32 @@
 
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.combatrole.value" class="resource-label">Race/Role</label>
+          <label for="system.attributes.combatrole.value" class="resource-label">Character Role</label>
           <div class="resource-content flexrow flex-center flex-between">
             <select name="system.attributes.combatrole.value">
-              <option value="Bard" {{#if (eq system.attributes.combatrole.value "" )}}selected{{/if}}></option>
-              <option value="Bard" {{#if (eq system.attributes.combatrole.value "Bard" )}}selected{{/if}}>Human Bard</option>
-              <option value="Ranger" {{#if (eq system.attributes.combatrole.value "Ranger" )}}selected{{/if}}>Human Ranger
-              </option>
-              <option value="Sorcerer" {{#if (eq system.attributes.combatrole.value "Sorcerer" )}}selected{{/if}}>
-                Human Sorcerer</option>
-              <option value="Thief" {{#if (eq system.attributes.combatrole.value "Thief" )}}selected{{/if}}>Human Thief
-              </option>
-              <option value="Warrior" {{#if (eq system.attributes.combatrole.value "Warrior" )}}selected{{/if}}>Human Warrior
-              </option>
+              <option value="" {{#if (eq system.attributes.combatrole.value "" )}}selected{{/if}}></option>
+              <option value="Bard" {{#if (eq system.attributes.combatrole.value "Bard" )}}selected{{/if}}>Bard</option>
               <option value="Dwarf" {{#if (eq system.attributes.combatrole.value "Dwarf" )}}selected{{/if}}>Dwarf
               </option>
               <option value="Elf" {{#if (eq system.attributes.combatrole.value "Elf" )}}selected{{/if}}>Elf</option>
               <option value="Halfling" {{#if (eq system.attributes.combatrole.value "Halfling" )}}selected{{/if}}>
                 Halfling
               </option>
+              <option value="Ranger" {{#if (eq system.attributes.combatrole.value "Ranger" )}}selected{{/if}}>Ranger
+              </option>
+              <option value="Sorcerer" {{#if (eq system.attributes.combatrole.value "Sorcerer" )}}selected{{/if}}>
+                Sorcerer</option>
+              <option value="Thief" {{#if (eq system.attributes.combatrole.value "Thief" )}}selected{{/if}}>Thief
+              </option>
+              <option value="Warrior" {{#if (eq system.attributes.combatrole.value "Warrior" )}}selected{{/if}}>Warrior
+              </option>
+
+
+
             </select>
           </div>
         </div>
-                <div class="resource flex-group-center">
+        <div class="resource flex-group-center">
           <label for="system.attributes.sex.value" class="resource-label">Sex</label>
           <div class="resource-content flexrow flex-center flex-between">
             <select name="system.attributes.sex.value">
@@ -127,17 +130,18 @@
     <!--a class="item" data-tab="effects">Effects</a-->
   </nav>
 
- {{!-- Sheet Body --}}
+  {{!-- Sheet Body --}}
   <section class="sheet-body">
 
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
       <section class="grid grid-3col">
-       
+
 
         {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-3">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
+          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in
+          module/helpers/templates.mjs --}}
           {{> "systems/reconquest/templates/actor/parts/actor-features.hbs"}}
         </section>
 
@@ -152,7 +156,7 @@
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/reconquest/templates/actor/parts/actor-items.hbs"}}
+      {{> "systems/reconquest/templates/actor/parts/actor-items.hbs"}}
     </div>
 
     {{!-- Owned Spells Tab --}}
