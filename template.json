@@ -24,45 +24,105 @@
         "base"
       ],
       "attributes": {
-        "level": {"value": 1}
+        "level": {
+          "value": 1
+        }
       },
       "abilities": {
-        "str": {"value": 10},
-        "dex": {"value": 10},
-        "con": {"value": 10},
-        "int": {"value": 10},
-        "wil": {"value": 10},
-        "cha": {"value": 10}
+        "str": {
+          "value": 10
+        },
+        "dex": {
+          "value": 10
+        },
+        "con": {
+          "value": 10
+        },
+        "int": {
+          "value": 10
+        },
+        "wil": {
+          "value": 10
+        },
+        "cha": {
+          "value": 10
+        }
       },
       "conditions": {
-        "afraid": {"value": 0},
-        "blinded": {"value": 0},
-        "encumbered": {"value": 0},
-        "entangled": {"value": 0},
-        "helpless": {"value": 0},
-        "poisoned": {"value": 0},
-        "seriouslyinjured": {"value": 0},
-        "sick": {"value": 0},
-        "soakingwet": {"value": 0},
-        "stunned": {"value": 0},
-        "tired": {"value": 0},
-        "submerged": {"value": 0}
+        "afraid": {
+          "value": 0
+        },
+        "blinded": {
+          "value": 0
+        },
+        "encumbered": {
+          "value": 0
+        },
+        "entangled": {
+          "value": 0
+        },
+        "helpless": {
+          "value": 0
+        },
+        "poisoned": {
+          "value": 0
+        },
+        "seriouslyinjured": {
+          "value": 0
+        },
+        "sick": {
+          "value": 0
+        },
+        "soakingwet": {
+          "value": 0
+        },
+        "stunned": {
+          "value": 0
+        },
+        "tired": {
+          "value": 0
+        },
+        "submerged": {
+          "value": 0
+        }
       },
       "currency": {
-        "ap": {"value": 0},
-        "gp": {"value": 0},
-        "sp": {"value": 0},
-        "cp": {"value": 0}
+        "ap": {
+          "value": 0
+        },
+        "gp": {
+          "value": 0
+        },
+        "sp": {
+          "value": 0
+        },
+        "cp": {
+          "value": 0
+        }
       },
       "combatstats": {
-        "baseov": {"value": 0},
-        "basedvme": {"value": 0},
-        "basedvmi": {"value": 0},
-        "armordv": {"value": 0},
-        "helmetdv": {"value": 0},
-       "shielddvme": {"value": 0},
-        "shielddvmi": {"value": 0}
-     }
+        "baseov": {
+          "value": 0
+        },
+        "basedvme": {
+          "value": 0
+        },
+        "basedvmi": {
+          "value": 0
+        },
+        "armordv": {
+          "value": 0
+        },
+        "helmetdv": {
+          "value": 0
+        },
+        "shielddvme": {
+          "value": 0
+        },
+        "shielddvmi": {
+          "value": 0
+        }
+      }
     },
     "npc": {
       "templates": [

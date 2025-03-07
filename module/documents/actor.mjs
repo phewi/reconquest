@@ -51,7 +51,239 @@ export class ReconQuestActor extends Actor {
     for (let [key, ability] of Object.entries(systemData.abilities)) {
       // Calculate the modifier using d20 rules.
       ability.mod = Math.floor((ability.value - 10) / 2);
+      //str ov me
+      switch (true) {
+        case (ability.value >= 21):
+          ability.ovme = 5;
+          break;
+        case (ability.value === 20):
+          ability.ovme = 4;
+          break;
+        case (ability.value >= 18 && ability.value <= 19):
+          ability.ovme = 3;
+          break;
+        case (ability.value >= 16 && ability.value <= 17):
+          ability.ovme = 2;
+          break;
+        case (ability.value >= 13 && ability.value <= 15):
+          ability.ovme = 1;
+          break;
+        case (ability.value >= 9 && ability.value <= 12):
+          ability.ovme = 0;
+          break;
+        case (ability.value >= 6 && ability.value <= 8):
+          ability.ovme = -1;
+          break;
+        case (ability.value >= 4 && ability.value <= 5):
+          ability.ovme = -2;
+          break;
+        case (ability.value >= 2 && ability.value <= 3):
+          ability.ovme = -3;
+          break;
+        case (ability.value === 1):
+          ability.ovme = -4;
+          break;
+        default:
+          ability.ovme = 0;
+      }
+
+      //str carrycapacity & maximumcapacity
+      switch (true) {
+        case (ability.value >= 21):
+          ability.carrycapacity = 105;
+          ability.maximumcapacity = 210;
+          break;
+        case (ability.value < 21):
+          ability.carrycapacity = ability.value * 5;
+          ability.maximumcapacity = ability.value * 10;
+          break;
+        default:
+          ability.carrycapacity = 0;
+      }
+
+      // dex ovmi
+      switch (true) {
+        case (ability.value > 21):
+          ability.ovmi = 5;
+          break;
+        case (ability.value === 20):
+          ability.ovmi = 4;
+          break;
+        case (ability.value >= 18 && ability.value <= 19):
+          ability.ovmi = 3;
+          break;
+        case (ability.value >= 16 && ability.value <= 17):
+          ability.ovmi = 2;
+          break;
+        case (ability.value >= 13 && ability.value <= 15):
+          ability.ovmi = 1;
+          break;
+        case (ability.value >= 9 && ability.value <= 12):
+          ability.ovmi = 0;
+          break;
+        case (ability.value >= 6 && ability.value <= 8):
+          ability.ovmi = -1;
+          break;
+        case (ability.value >= 4 && ability.value <= 5):
+          ability.ovmi = -2;
+          break;
+        case (ability.value >= 2 && ability.value <= 3):
+          ability.ovmi = -3;
+          break;
+        case (ability.value === 1):
+          ability.ovmi = -4;
+          break;
+        default:
+          ability.ovmi = 0;
+      }
+      // dex dv
+      switch (true) {
+        case (ability.value > 21):
+          ability.dv = 5;
+          break;
+        case (ability.value === 20):
+          ability.dv = 4;
+          break;
+        case (ability.value >= 18 && ability.value <= 19):
+          ability.dv = 3;
+          break;
+        case (ability.value >= 16 && ability.value <= 17):
+          ability.dv = 2;
+          break;
+        case (ability.value >= 13 && ability.value <= 15):
+          ability.dv = 1;
+          break;
+        case (ability.value >= 9 && ability.value <= 12):
+          ability.dv = 1;
+          break;
+        case (ability.value < 8):
+          ability.dv = 0;
+          break;
+        default:
+          ability.dv = 0;
+      }
+      // dex climbingrate
+      switch (true) {
+        case (ability.value > 21):
+          ability.climbingrate = 20;
+          break;
+        case (ability.value === 20):
+          ability.climbingrate = 20;
+          break;
+        case (ability.value >= 16 && ability.value <= 19):
+          ability.climbingrate = 15;
+          break;
+        case (ability.value >= 6 && ability.value <= 15):
+          ability.climbingrate = 10;
+          break;
+        case (ability.value >= 2 && ability.value <= 5):
+          ability.climbingrate = 5;
+          break;
+        case (ability.value === 1):
+          ability.climbingrate = 0;
+          break;
+        default:
+          ability.climbingrate = 0;
+      }
+      // con swimmingrate 
+      switch (true) {
+        case (ability.value > 20):
+          ability.swimmingrate = 20;
+          break;
+        case (ability.value >= 16 && ability.value <= 19):
+          ability.swimmingrate = 15;
+          break;
+        case (ability.value >= 6 && ability.value <= 15):
+          ability.swimmingrate = 10;
+          break;
+        case (ability.value >= 2 && ability.value <= 5):
+          ability.swimmingrate = 5;
+          break;
+        case (ability.value === 1):
+          ability.swimmingrate = 0;
+          break;
+        default:
+          ability.swimmingrate = 0;
+      }
+      // con holdbreath
+      switch (true) {
+        case (ability.value > 20):
+          ability.holdbreath = 11;
+          break;
+        case (ability.value === 20):
+          ability.holdbreath = 10;
+          break;
+        case (ability.value >= 18 && ability.value <= 19):
+          ability.holdbreath = 9;
+          break;
+        case (ability.value >= 16 && ability.value <= 17):
+          ability.holdbreath = 8;
+          break;
+        case (ability.value >= 13 && ability.value <= 15):
+          ability.holdbreath = 7;
+          break;
+        case (ability.value >= 9 && ability.value <= 12):
+          ability.holdbreath = 6;
+          break;
+        case (ability.value >= 6 && ability.value <= 8):
+          ability.holdbreath = 5;
+          break;
+        case (ability.value >= 4 && ability.value <= 5):
+          ability.holdbreath = 4;
+          break;
+        case (ability.value >= 2 && ability.value <= 3):
+          ability.holdbreath = 3;
+          break;
+        case (ability.value === 1):
+          ability.holdbreath = 2;
+          break;
+        default:
+          ability.holdbreath = 0;
+      }
+      //int dailyspells
+      switch (true) {
+        case (ability.value > 21):
+          ability.dailyspells = 5;
+          break;
+        case (ability.value === 20):
+          ability.dailyspells = 4;
+          break;
+        case (ability.value >= 18 && ability.value <= 19):
+          ability.dailyspells = 3;
+          break;
+        case (ability.value >= 16 && ability.value <= 17):
+          ability.dailyspells = 2;
+          break;
+        case (ability.value >= 13 && ability.value <= 15):
+          ability.dailyspells = 1;
+          break;
+        case (ability.value <= 12):
+          ability.dailyspells = 0;
+          break;
+        default:
+          ability.dailyspells = 0;
+      }
+      //int extralanguages
+      switch (true) {
+        case (ability.value > 21):
+          ability.extralanguages = 3;
+          break;
+        case (ability.value >= 18 && ability.value <= 20):
+          ability.extralanguages = 2;
+          break;
+        case (ability.value >= 13 && ability.value <= 17):
+          ability.extralanguages = 1;
+          break;
+        case (ability.value <= 12):
+          ability.extralanguages = 0;
+          break;
+        default:
+          ability.extralanguages = 0;
+      }
     }
+
+    //Create ability score dependant stuff
+    ability.maxretainers = charisma.value / 2;
   }
 
   /**
@@ -95,10 +327,10 @@ export class ReconQuestActor extends Actor {
 
     // Add level for easier access, or fall back to 0.
     //disabled, breaks charsheet for some reason
- /*   if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
-    }
-    else data.lvl = 1;*/
+    /*   if (data.attributes.level) {
+         data.lvl = data.attributes.level.value ?? 0;
+       }
+       else data.lvl = 1;*/
   }
 
   /**
