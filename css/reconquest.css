@@ -360,7 +360,7 @@
   text-align: left;
 }
 .reconquest .item-formula {
-  flex: 0 0 90px;
+  /*flex: 0 0 200px;*/
   padding: 0 8px;
 }
 .reconquest .effects .item .effect-source,

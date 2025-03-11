@@ -128,7 +128,15 @@
       "templates": [
         "base"
       ],
-      "cr": 0
+      "size": "",
+      "move": "",
+      "fright": "",
+      "ov": "",
+      "damage": 0,
+      "dv": "",
+      "hp": "",
+      
+      "typicalheight": 0
     }
   },
   "Item": {
@@ -148,7 +156,9 @@
       ],
       "quantity": 1,
       "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "formula": "d20",
+      "damage":"",
+      "reach":""
     },
     "feature": {
       "templates": [

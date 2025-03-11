@@ -36,12 +36,6 @@
               data-dtype="Number" />
           </div>
         </div>
-        <div class="resource flex-group-center">
-          <label for="system.age.value" class="resource-label">Age</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.age.value" value="{{system.age.value}}" data-dtype="Number" />
-          </div>
-        </div>
 
       </div>
       <div class="resources grid grid-5col">
@@ -94,21 +88,7 @@
             </select>
           </div>
         </div>
-        <div class="resource flex-group-center">
-          <label for="system.height.value" class="resource-label">Height</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.height.value" value="{{system.height.value}}" data-dtype="Number" />
-          </div>
-        </div>
 
-
-
-        <div class="resource flex-group-center">
-          <label for="system.weight.value" class="resource-label">Weight</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.weight.value" value="{{system.weight.value}}" data-dtype="Number" />
-          </div>
-        </div>
       </div>
       <div class="resources grid grid-5col">
 
@@ -151,7 +131,35 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+      
+      <div class="resources grid grid-5col">
+        <div class="resource flex-group-center">
+        <h2>Basic info</h2>
+        
+          <label for="system.age.value" class="resource-label">Age</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.age.value" value="{{system.age.value}}" data-dtype="Number" />
+          </div>
+
+          
+            <label for="system.height.value" class="resource-label">Height</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.height.value" value="{{system.height.value}}" data-dtype="Number" />
+            </div>
+          
+
+          
+            <label for="system.weight.value" class="resource-label">Weight</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.weight.value" value="{{system.weight.value}}" data-dtype="Number" />
+            </div>
+        
+        </div>
+        <div class="resource flex-group-center grid-span-4">
+          <h2>Biography</h2>
+        {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+        </div>
+      </div>
     </div>
 
     {{!-- Owned Items Tab --}}

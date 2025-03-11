@@ -14,11 +14,8 @@
     </div>
 
     <div class="ability flexrow flex-group-left">
-      Carrying capacity: {{numberFormat system.abilities.str.carrycapacity decimals=0}} lbs
-    </div>
-
-        <div class="ability flexrow flex-group-left">
-      Carrying capacity: {{numberFormat system.abilities.str.maximumcapacity decimals=0}} lbs
+      Carrying capacity: {{numberFormat system.abilities.str.carrycapacity decimals=0}}({{numberFormat
+      system.abilities.str.maximumcapacity decimals=0}}) lbs
     </div>
 
     <div class="ability flexrow flex-group-center">
@@ -38,11 +35,11 @@
     <div class="ability flexrow flex-group-left">
       Initiative: {{numberFormat system.abilities.dex.dv decimals=0 sign=true}}
     </div>
-   
+
     <div class="ability flexrow flex-group-left">
       Climbing rate: {{numberFormat system.abilities.dex.climbingrate decimals=0 }} ft
     </div>
-   
+
     <div class="ability flexrow flex-group-center">
       <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left" data-roll="d20"
         data-label="">Constitution</label>
@@ -83,7 +80,8 @@
     </div>
 
     <div class="ability flexrow flex-group-left">
-      Max retainers/hirelings: {{numberFormat system.abilities.cha.maxretainers}} / {{numberFormat system.abilities.cha.maxretainers}}
+      Max retainers/hirelings: {{numberFormat system.abilities.cha.maxretainers}} / {{numberFormat
+      system.abilities.cha.maxretainers}}
     </div>
 
     <h2 style="margin-top:20px" class="section-header">Combat Statistics</h2>
@@ -140,12 +138,13 @@
 
   </div>
   <div class="resource flex-group-center grid-span-2">
-    <h2>Equipment</h2>
+    <h2>Weapons</h2>
 
     <ol class='items-list'>
       <li class='item flexrow items-header'>
         <div class='item-name'>{{localize 'Name'}}</div>
-        <div class='item-formula'>Weight</div>
+        <div class='item-formula'>Damage</div>
+        <div class='item-formula'>Reach</div>
         <div class='item-controls'>
           <a class='item-control item-create' title='{{localize "DOCUMENT.Create" type=' Item'}}' data-type='item'>
             <i class='fas fa-plus'></i>
@@ -163,7 +162,8 @@
           </div>
           <h4>{{item.name}}</h4>
         </div>
-        <div class='item-weight item-prop'>{{item.system.weight}}</div>
+        <div class='item-damage item-prop'>{{item.system.damage}}</div>
+        <div class='item-reach item-prop'>{{item.system.reach}}</div>
         <div class='item-controls'>
           <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Item'}}'>
             <i class='fas fa-edit'></i>
@@ -176,6 +176,7 @@
       {{/each}}
     </ol>
 
+    <h2>Armor</h2>
 
 
 
