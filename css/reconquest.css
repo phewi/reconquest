@@ -1,20 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 /*custom*/
-.combatstatnarrow-label{
-  width:100px !important;
+.combatstatnarrow-label {
+  width: 100px !important;
 }
-.combatstatnarrow-value{
-  width:33px !important;
-  flex:none;
+
+.combatstatnarrow-value {
+  width: 33px !important;
+  flex: none;
 }
+
+.abilitycontainer {
+  margin-bottom: 10px;
+}
+
+.widecontainer {
+  margin-bottom: 30px;
+}
+
+.notescontainer {
+  text-align: left;
+}
+
+.totalbold {
+  font-weight: bold;
+}
+
+.sheet-tabs {
+  /*display:none;*/
+}
+.abilitygroupcontainer {
+  border: #666 1px solid;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.abilitygrouplabel { 
+
+}
+
 /* Global styles */
 
 .window-app {
   font-family: "Roboto", sans-serif;
 }
 
-.rollable:hover, .rollable:focus {
+.rollable:hover,
+.rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
@@ -217,6 +248,7 @@
 .reconquest .item-form {
   font-family: "Roboto", sans-serif;
 }
+
 .reconquest .sheet-header {
   flex: 0 auto;
   overflow: hidden;
@@ -226,42 +258,52 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
+
 .reconquest .sheet-header .profile-img {
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }
+
 .reconquest .sheet-header .header-fields {
   flex: 1;
 }
+
 .reconquest .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
+
 .reconquest .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
+
 .reconquest .sheet-tabs {
   flex: 0;
 }
+
 .reconquest .sheet-body,
 .reconquest .sheet-body .tab,
 .reconquest .sheet-body .tab .editor {
   height: 100%;
 }
+
 .reconquest .tox .tox-editor-container {
   background: #fff;
 }
+
 .reconquest .tox .tox-edit-area {
   padding: 0 8px;
 }
+
 .reconquest .resource-label {
   font-weight: bold;
 }
+
 .reconquest .items-header {
   height: 28px;
   margin: 2px 0;
@@ -271,16 +313,19 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-.reconquest .items-header > * {
+
+.reconquest .items-header>* {
   font-size: 14px;
   text-align: center;
 }
+
 .reconquest .items-header .item-name {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
   display: flex;
 }
+
 .reconquest .items-list {
   list-style: none;
   margin: 0;
@@ -289,11 +334,13 @@
   scrollbar-width: thin;
   color: #444;
 }
+
 .reconquest .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .reconquest .items-list .item-name {
   flex: 2;
   margin: 0;
@@ -303,32 +350,40 @@
   align-items: center;
   display: flex;
 }
-.reconquest .items-list .item-name h3, .reconquest .items-list .item-name h4 {
+
+.reconquest .items-list .item-name h3,
+.reconquest .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
+
 .reconquest .items-list .item-controls {
   display: flex;
   flex: 0 0 80px;
   justify-content: flex-end;
 }
+
 .reconquest .items-list .item-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
+
 .reconquest .items-list .item {
   align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid #c9c7b8;
 }
+
 .reconquest .items-list .item:last-child {
   border-bottom: none;
 }
+
 .reconquest .items-list .item .item-name {
   color: #191813;
 }
+
 .reconquest .items-list .item .item-name .item-image {
   flex: 0 0 30px;
   height: 30px;
@@ -336,12 +391,14 @@
   border: none;
   margin-right: 5px;
 }
+
 .reconquest .items-list .item-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
+
 .reconquest .items-list .items-header {
   height: 28px;
   margin: 2px 0;
@@ -351,18 +408,22 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-.reconquest .items-list .items-header > * {
+
+.reconquest .items-list .items-header>* {
   font-size: 12px;
   text-align: center;
 }
+
 .reconquest .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
 }
+
 .reconquest .item-formula {
   /*flex: 0 0 200px;*/
   padding: 0 8px;
 }
+
 .reconquest .effects .item .effect-source,
 .reconquest .effects .item .effect-duration,
 .reconquest .effects .item .effect-controls {
@@ -371,6 +432,7 @@
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
+
 .reconquest .effects .item .effect-controls {
   border: none;
 }

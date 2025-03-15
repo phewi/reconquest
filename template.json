@@ -121,6 +121,9 @@
         },
         "shielddvmi": {
           "value": 0
+        },
+        "criticaldamagethreshold": {
+          "value": 0
         }
       }
     },

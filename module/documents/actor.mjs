@@ -136,31 +136,39 @@ export class ReconQuestActor extends Actor {
         default:
           ability.ovmi = 0;
       }
-      // dex dv
+      // dex dv & initiative
       switch (true) {
         case (ability.value > 21):
           ability.dv = 5;
+          ability.initiative = 5;
           break;
         case (ability.value === 20):
           ability.dv = 4;
+          ability.initiative = 4;
           break;
         case (ability.value >= 18 && ability.value <= 19):
           ability.dv = 3;
+          ability.initiative = 3;
           break;
         case (ability.value >= 16 && ability.value <= 17):
           ability.dv = 2;
+          ability.initiative = 2;
           break;
         case (ability.value >= 13 && ability.value <= 15):
           ability.dv = 1;
+          ability.initiative = 1;
           break;
         case (ability.value >= 9 && ability.value <= 12):
           ability.dv = 1;
+          ability.initiative = 1;
           break;
         case (ability.value < 8):
           ability.dv = 0;
+          ability.initiative = 0;
           break;
         default:
           ability.dv = 0;
+          ability.initiative = 0;
       }
       // dex climbingrate
       switch (true) {
