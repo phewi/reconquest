@@ -104,6 +104,7 @@ export class ReconQuestActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
+    const companions = [];
     const features = [];
     const spells = {
       //0: [],
@@ -129,6 +130,10 @@ export class ReconQuestActorSheet extends ActorSheet {
       else if (i.type === 'feature') {
         features.push(i);
       }
+      // Append to companions.
+      else if (i.type === 'companion') {
+        companions.push(i);
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -140,6 +145,7 @@ export class ReconQuestActorSheet extends ActorSheet {
     // Assign and return
     context.gear = gear;
     context.features = features;
+    context.companions = companions;
     context.spells = spells;
   }
 

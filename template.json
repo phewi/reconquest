@@ -162,12 +162,18 @@
       "weight": 0,
       "formula": "d20",
       "damage":"",
-      "reach":""
+      "reach":"",
+      "location": "",
+      "companiontype":"",
+      "companionquicknote":"",
+      "monthlycost":"",
+      "role":""
     },
     "companion": {
       "templates": [
         "base"
       ]
+
     },
     "feature": {
       "templates": [

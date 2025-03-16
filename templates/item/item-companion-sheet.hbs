@@ -1,0 +1,69 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+
+        </div>
+
+    </header>
+
+
+    <nav style="display: none;" class='sheet-tabs tabs' data-group='primary'>
+        <a class='item' data-tab='description'>Description</a>
+    </nav>
+
+    {{! Sheet Body }}
+    <section class='sheet-body'>
+
+        {{! Description Tab }}<div class="ability flexrow flex-group-center">
+            <div class='grid grid-4col'>
+
+                <div class='grid-span-1'>
+
+                    <label class='resource-label'>Type</label>
+                    <select style="display: block; width: 100%;" name="system.companiontype">
+                        <option value="" {{#if (eq system.companiontype "" )}}selected{{/if}}></option>
+                        <option value="Hireling" {{#if (eq system.companiontype "Hireling" )}}selected{{/if}}>Hireling
+                        </option>
+                        <option value="Retainer" {{#if (eq system.companiontype "Retainer" )}}selected{{/if}}>Retainer
+                        </option>
+                        <option value="Follower" {{#if (eq system.companiontype "Follower" )}}selected{{/if}}>Follower
+                        </option>
+                    </select>
+
+                </div>
+                <div class='grid-span-1'>
+                    <label class='resource-label'>Role</label>
+                    <input type='text' name='system.role' value='{{system.role}}' data-dtype='Text' />
+                </div>
+                <div class='grid-span-1'>
+                    <label class='resource-label'>Location</label>
+                    <input type='text' name='system.location' value='{{system.location}}' data-dtype='Text' />
+                </div>
+                <div class='grid-span-1'>
+                    <label class='resource-label'>Monthly Cost (SP)</label>
+                    <input type='text' name='system.monthlycost' value='{{system.monthlycost}}' data-dtype='Text' />
+                </div>
+
+                <div class='grid-span-3'>
+                    <label class='resource-label'>Quick note</label>
+                    <input type='text' name='system.companionquicknote' value='{{system.companionquicknote}}'
+                        data-dtype='Text' />
+                </div>
+
+            </div>
+        </div>
+        <label class='resource-label'>Description</label>
+        <div class='tab' data-group='primary' data-tab='description'>
+            {{! Editors must receive enriched text data from getData to properly handle rolls }}
+            {{editor
+            enrichedDescription
+            target='system.description'
+            engine='prosemirror'
+            button=true
+            editable=editable
+            }}
+        </div>
+    </section>
+    < </form>
