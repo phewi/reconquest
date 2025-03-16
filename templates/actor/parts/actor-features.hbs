@@ -152,9 +152,24 @@
         {{#each gear as |item id|}}
         <li class='item flexrow' data-item-id='{{item._id}}'>
           <div class='item-name'>
-            <div class='item-image'>
-              <a class='rollable' data-roll-type='item'>
-                <img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+            <div class='item-controls item-announce'>
+
+              <a {{#if item.system.damage}}class='rollable' {{/if}} data-roll-type='item'>
+
+                {{#if item.system.damage}}
+                <i class='fas fa-dice-d20'></i>
+                {{/if}}
+                <!--img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /
+                
+                <div class='item-controls item-announce'>
+                <a class='item-control rollable' data-roll-type='item'>
+                  <i class="fas fa-comment"></i>
+                </a>
+              </div>
+                
+                
+                
+                -->
               </a>
             </div>
             <h4>{{item.name}}</h4>
@@ -176,7 +191,7 @@
     <div class="widecontainer">
 
       <div class="combatstatcontainer resources grid grid-5col">
-
+        <h3 class="grid-span-5">Combat Statistics</h3>
         <div class="resource flex-group-center">
           <label for="system.combatstats.baseov.value" class="resource-label flexlarge align-left">Base
             OV</label>
@@ -185,7 +200,8 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.combatstats.attackrate.value" class="resource-label flexlarge align-left">Attack rate</label>
+          <label for="system.combatstats.attackrate.value" class="resource-label flexlarge align-left">Attack
+            rate</label>
           <input type="text" name="system.combatstats.attackrate.value" value="{{system.combatstats.attackrate.value}}"
             data-dtype="Text" />
         </div>
@@ -203,7 +219,7 @@
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.criticaldamagethreshold.value" class="resource-label">Dmg threshold</label>
+          <label for="system.combatstats.criticaldamagethreshold.value" class="resource-label">Damage threshold</label>
           <input type="text" name="system.combatstats.criticaldamagethreshold.value"
             value="{{system.combatstats.criticaldamagethreshold.value}}" data-dtype="Number" />
         </div>
@@ -220,11 +236,12 @@
 
         <div class="resource flex-group-center">
           <label for="system.combatstats.armormaxdex.value" class="resource-label">Max DEX</label>
-          <input type="text" name="system.combatstats.armormaxdex.value" value="{{system.combatstats.armormaxdex.value}}"
-            data-dtype="Number" />
+          <input type="text" name="system.combatstats.armormaxdex.value"
+            value="{{system.combatstats.armormaxdex.value}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.armorasda.value" class="resource-label">ASDA</label>
+          <label for="system.combatstats.armorasda.value" class="resource-label"
+            title="Ability Score Die Adjustment">ASDA</label>
           <input type="text" name="system.combatstats.armorasda.value" value="{{system.combatstats.armorasda.value}}"
             data-dtype="Number" />
         </div>
@@ -235,8 +252,8 @@
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.armorweight.value" class="resource-label">Weight</label>
-          <input type="text" name="system.combatstats.armorweight.value" value="{{system.combatstats.armorweight.value}}"
-            data-dtype="Number" />
+          <input type="text" name="system.combatstats.armorweight.value"
+            value="{{system.combatstats.armorweight.value}}" data-dtype="Number" />
         </div>
 
       </div>
@@ -249,23 +266,24 @@
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.helmetmaxdex.value" class="resource-label">Max DEX</label>
-          <input type="text" name="system.combatstats.helmetmaxdex.value" value="{{system.combatstats.helmetmaxdex.value}}"
-            data-dtype="Number" />
+          <input type="text" name="system.combatstats.helmetmaxdex.value"
+            value="{{system.combatstats.helmetmaxdex.value}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetasda.value" class="resource-label">ASDA</label>
+          <label for="system.combatstats.helmetasda.value" class="resource-label"
+            title="Ability Score Die Adjustment">ASDA</label>
           <input type="text" name="system.combatstats.helmetasda.value" value="{{system.combatstats.helmetasda.value}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetovmiperception.value" class="resource-label">OV MI/Perception</label>
-          <input type="text" name="system.combatstats.helmetovmiperception.value" value="{{system.combatstats.helmetovmiperception.value}}"
-            data-dtype="Number" />
+          <label for="system.combatstats.helmetovmiperception.value" class="resource-label">OV MI / Perception</label>
+          <input type="text" name="system.combatstats.helmetovmiperception.value"
+            value="{{system.combatstats.helmetovmiperception.value}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.helmetweight.value" class="resource-label">Weight</label>
-          <input type="text" name="system.combatstats.helmetweight.value" value="{{system.combatstats.helmetweight.value}}"
-            data-dtype="Number" />
+          <input type="text" name="system.combatstats.helmetweight.value"
+            value="{{system.combatstats.helmetweight.value}}" data-dtype="Number" />
         </div>
 
 
@@ -285,18 +303,19 @@
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.shieldblock.value" class="resource-label">Shield Block</label>
-          <input type="text" name="system.combatstats.shieldblock.value" value="{{system.combatstats.shieldblock.value}}"
-            data-dtype="Number" />
+          <input type="text" name="system.combatstats.shieldblock.value"
+            value="{{system.combatstats.shieldblock.value}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.shieldasda.value" class="resource-label">ASDA</label>
+          <label for="system.combatstats.shieldasda.value" class="resource-label"
+            title="Ability Score Die Adjustment">ASDA</label>
           <input type="text" name="system.combatstats.shieldasda.value" value="{{system.combatstats.shieldasda.value}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.shieldweight.value" class="resource-label">Weight</label>
-          <input type="text" name="system.combatstats.shieldweight.value" value="{{system.combatstats.shieldweight.value}}"
-            data-dtype="Number" />
+          <input type="text" name="system.combatstats.shieldweight.value"
+            value="{{system.combatstats.shieldweight.value}}" data-dtype="Number" />
         </div>
 
 
@@ -317,9 +336,9 @@
           {{#each features as |item id|}}
           <li class='item flexrow' data-item-id='{{item._id}}'>
             <div class='item-name'>
-              <div class='item-image'>
-                <a class='rollable' data-roll-type='item'>
-                  <img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+              <div class='item-controls item-announce'>
+                <a class='item-control rollable' data-roll-type='item'>
+                  <i class="fas fa-comment"></i>
                 </a>
               </div>
               <h4>{{item.name}}</h4>
