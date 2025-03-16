@@ -288,10 +288,14 @@ export class ReconQuestActor extends Actor {
         default:
           ability.extralanguages = 0;
       }
+      
+      //cha maxretainers & hirelings
+      ability.maxretainers = Math.ceil(ability.value / 2);
+      ability.maxhirelings = ability.value;
     }
+    
 
-    //Create ability score dependant stuff
-    ability.maxretainers = charisma.value / 2;
+   
   }
 
   /**

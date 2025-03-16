@@ -22,10 +22,6 @@
   text-align: left;
 }
 
-.totalbold {
-  font-weight: bold;
-}
-
 .sheet-tabs {
   /*display:none;*/
 }
@@ -37,7 +33,11 @@
 .abilitygrouplabel { 
 
 }
-
+.combatstatcontainer {
+  /*border: #666 1px solid;*/
+  padding: 5px;
+  margin-bottom: 10px;
+}
 /* Global styles */
 
 .window-app {
@@ -47,7 +47,7 @@
 .rollable:hover,
 .rollable:focus {
   color: #000;
-  text-shadow: 0 0 10px red;
+  filter: drop-shadow(0px 0px 5px red);
   cursor: pointer;
 }
 
