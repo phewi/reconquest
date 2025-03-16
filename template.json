@@ -146,6 +146,7 @@
     "types": [
       "item",
       "feature",
+      "companion",
       "spell"
     ],
     "templates": {
@@ -163,6 +164,11 @@
       "damage":"",
       "reach":""
     },
+    "companion": {
+      "templates": [
+        "base"
+      ]
+    },
     "feature": {
       "templates": [
         "base"
@@ -174,5 +180,6 @@
       ],
       "spellLevel": 1
     }
+    
   }
 }

@@ -10,6 +10,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/reconquest/templates/actor/parts/actor-items.hbs',
     'systems/reconquest/templates/actor/parts/actor-spells.hbs',
     'systems/reconquest/templates/actor/parts/actor-effects.hbs',
+    'systems/reconquest/templates/actor/parts/actor-companions.hbs',
     // Item partials
     'systems/reconquest/templates/item/parts/item-effects.hbs',
   ]);
