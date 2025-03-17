@@ -26,7 +26,7 @@
         <div class='item-companiontype item-prop'>{{item.system.companiontype}}</div>
         <div class='item-companionrole item-prop'>{{item.system.role}}</div>
         <div class='item-location item-prop'>{{item.system.location}}</div>
-        <div class='item-companionmontlycost item-prop'>{{item.system.monthlycost}}</div>
+        <div class='item-companionmontlycost item-prop'>{{#if (eq system.companiontype "Follower" )}}N/A{{else}}{{item.system.monthlycost}}{{/if}}</div>
         <div class='item-companionquicknote item-prop'>{{item.system.companionquicknote}}</div>
         
         <div class='item-controls'>

@@ -28,7 +28,9 @@
   height: 24px;
   line-height: 28px;
 }
-
+input.quicknote{
+  text-align: left;
+}
 .sheet-tabs {
   /*display:none;*/
 }

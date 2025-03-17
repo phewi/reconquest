@@ -43,12 +43,12 @@
                 </div>
                 <div class='grid-span-1'>
                     <label class='resource-label'>Monthly Cost (SP)</label>
-                    <input type='text' name='system.monthlycost' value='{{system.monthlycost}}' data-dtype='Text' />
+                    <input type='text' name='system.monthlycost' {{#if (eq system.companiontype "Follower" )}}disabled value='N/A'{{else}}value='{{system.monthlycost}}'{{/if}} data-dtype='Text' />
                 </div>
 
-                <div class='grid-span-3'>
+                <div class='grid-span-4'>
                     <label class='resource-label'>Quick note</label>
-                    <input type='text' name='system.companionquicknote' value='{{system.companionquicknote}}'
+                    <input class="quicknote" type='text' name='system.companionquicknote' value='{{system.companionquicknote}}'
                         data-dtype='Text' />
                 </div>
 
