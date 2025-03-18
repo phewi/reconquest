@@ -34,7 +34,10 @@ input.quicknote{
 .sheet-tabs {
   /*display:none;*/
 }
-
+.abilityd20icon{
+  flex:0;
+  margin-right: 5px;
+}
 i.fas.fa-dice-d20 {
   font-size: 18px;
 }

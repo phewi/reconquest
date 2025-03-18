@@ -7,8 +7,9 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left"
-            data-roll="d20" data-label="">Strength</label>
+          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            class="resource-label flexlarge align-left">Strength</label>
           <input type="text" name="system.abilities.str.value" value="{{system.abilities.str.value}}"
             data-dtype="Number" />
         </div>
@@ -24,8 +25,9 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left"
-            data-roll="d20" data-label="">Dexterity</label>
+          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            class="resource-label flexlarge align-left">Dexterity</label>
           <input type="text" name="system.abilities.dex.value" value="{{system.abilities.dex.value}}"
             data-dtype="Number" />
         </div>
@@ -48,8 +50,9 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left"
-            data-roll="d20" data-label="">Constitution</label>
+          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            class="resource-label flexlarge align-left">Constitution</label>
           <input type="text" name="system.abilities.con.value" value="{{system.abilities.con.value}}"
             data-dtype="Number" />
         </div>
@@ -69,8 +72,9 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left"
-            data-roll="d20" data-label="">Intelligence</label>
+          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            class="resource-label flexlarge align-left">Intelligence</label>
           <input type="text" name="system.abilities.int.value" value="{{system.abilities.int.value}}"
             data-dtype="Number" />
         </div>
@@ -85,16 +89,18 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left"
-            data-roll="d20" data-label="">Willpower</label>
+          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            class="resource-label flexlarge align-left">Willpower</label>
           <input type="text" name="system.abilities.wil.value" value="{{system.abilities.wil.value}}"
             data-dtype="Number" />
         </div>
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="resource-label rollable flexlarge align-left"
-            data-roll="d20" data-label="">Charisma</label>
+          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            class="resource-label flexlarge align-left">Charisma</label>
           <input type="text" name="system.abilities.cha.value" value="{{system.abilities.cha.value}}"
             data-dtype="Number" />
         </div>
@@ -115,24 +121,27 @@
 
 
         <div class="resource flex-group-center">
-          <label for="system.abilities.str.ovme" class=" resource-label flexlarge align-left">Total OV Mêlée
+          <label for="system.abilities.str.ovme" class=" resource-label flexlarge align-left"
+            title="OV ME from STR + OV from CR + dual wield bonus + weapon mod + -2 if afraid">Total OV Mêlée
           </label>
           <input type="text" name="system.abilities.str.ovme" disabled value="⚔️NYI" data-dtype="Number" />
 
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.abilities.dex.ovmi" class="resource-label flexlarge align-left">Total OV Missile
+          <label for="system.abilities.dex.ovmi" class="resource-label flexlarge align-left"
+            title="OV MI from DEX + OV from CR + -1 helmet penalty + -2 heavy helmet penalty + 2 if aiming + weapon mod + -2 if afraid">Total
+            OV Missile
           </label>
           <input type="text" name="system.abilities.dex.ovmi" disabled value="🏹NYI" data-dtype="Number" />
 
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.asd.value" class="resource-label">Total DV Mêlée</label>
+          <label for="system.combatstats.asd.value" class="resource-label" title="dex dv + cr dv + armor dv + helmet dv + shield dv + -2 if afraid">Total DV Mêlée</label>
           <input type="text" disabled name="system.combatstats.asd.value" value="🛡️NYI" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.asd.value" class="resource-label">Total DV Missile</label>
+          <label for="system.combatstats.asd.value" class="resource-label" title="10 + 2 size bonus for dwarf/halfling + dex dv + -2 if afraid">Total DV Missile</label>
           <input type="text" disabled name="system.combatstats.asd.value" value="🛡️NYI" data-dtype="Number" />
         </div>
 
