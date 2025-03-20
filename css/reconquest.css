@@ -34,6 +34,10 @@ input.quicknote{
 .sheet-tabs {
   /*display:none;*/
 }
+.abilityscoretext{
+  border: none !important;
+  background-color: transparent !important;
+}
 .abilityd20icon{
   flex:0;
   margin-right: 5px;
@@ -41,16 +45,19 @@ input.quicknote{
 i.fas.fa-dice-d20 {
   font-size: 18px;
 }
-
+.navigation{
+  display: none;
+}
 .d20icon {
   border: none !important;
 }
 
-.abilitygroupcontainer {
+
+/*.abilitygroupcontainer {
   border: #666 1px solid;
   padding: 5px;
   margin-bottom: 10px;
-}
+}*/
 
 .abilitygrouplabel {}
 
@@ -278,7 +285,7 @@ i.fas.fa-dice-d20 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
 }
 
 .reconquest .sheet-header .profile-img {

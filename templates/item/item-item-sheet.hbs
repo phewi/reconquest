@@ -1,19 +1,38 @@
 <form class='{{cssClass}}' autocomplete='off'>
   <header class='sheet-header'>
-    <img class='profile-img' src='{{item.img}}' data-edit='img' title='{{item.name}}' />
+    <!--img class='profile-img' src='{{item.img}}' data-edit='img' title='{{item.name}}' /-->
     <div class='header-fields'>
       <h1 class='charname'><input name='name' type='text' value='{{item.name}}' placeholder='Name' /></h1>
-      <div class='grid grid-2col'>
-        <div class='resource'>
-          <label class='resource-label'>Quantity</label>
-          <input type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
+      <div class='grid grid-4col'>
+        <div class='resource grid-span-2'>
+          <label class='resource-label'>Weapon Type</label>
+          <select name='system.weapontype'>
+            <option value='' {{#if (eq system.weapontype "" )}}selected{{/if}}></option>
+            {{! Melee weapons}}
+            <option disabled>-- Mêlée --</option>
+            <option value='Axes' {{#if (eq system.weapontype "Axes" )}}selected{{/if}}>Axes</option>
+            <option value='Concussion Weapons' {{#if (eq system.weapontype "Concussion Weapons" )}}selected{{/if}}>
+              Concussion Weapons</option>
+            <option value='Spears' {{#if (eq system.weapontype "Spears" )}}selected{{/if}}>Spears</option>
+            <option value='Swords & Daggers' {{#if (eq system.weapontype "Swords & Daggers" )}}selected{{/if}}>Swords
+              and Daggers</option>
+            <option value='Unarmed' {{#if (eq system.weapontype "Unarmed" )}}selected{{/if}}>Unarmed</option>
+
+            {{! Missile weapons}}
+            <option disabled>-- Missile --</option>
+            <option value='Bows' {{#if (eq system.weapontype "Bows" )}}selected{{/if}}>Bows</option>
+            <option value='Crossbows' {{#if (eq system.weapontype "Crossbows" )}}selected{{/if}}>Crossbows</option>
+            <option value='Darts' {{#if (eq system.weapontype "Darts" )}}selected{{/if}}>Darts</option>
+            <option value='Slings' {{#if (eq system.weapontype "Slings" )}}selected{{/if}}>Slings</option>
+            <option value='Thrown Axes' {{#if (eq system.weapontype "Thrown Axes" )}}selected{{/if}}>Thrown Axes
+            </option>
+            <option value='Thrown Concussion Weapons' {{#if (eq system.weapontype "Thrown Concussion Weapons"
+              )}}selected{{/if}}>Thrown Concussion Weapons</option>
+            <option value='Thrown Spears' {{#if (eq system.weapontype "Thrown Spears" )}}selected{{/if}}>Thrown Spears
+            </option>
+
+          </select>
         </div>
-        <div class='resource'>
-          <label class='resource-label'>Weight (lbs)</label>
-          <input type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
-        </div>
-      </div>
-      <div class='grid grid-2col'>
         <div class='resource'>
           <label class='resource-label'>Damage</label>
           <input type='text' name='system.damage' value='{{system.damage}}' data-dtype='Text' />
@@ -22,8 +41,15 @@
           <label class='resource-label'>Reach</label>
           <input type='text' name='system.reach' value='{{system.reach}}' data-dtype='Text' />
         </div>
+        <div class='resource'>
+          <label class='resource-label'>Weight (lbs)</label>
+          <input type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+        </div>
+        <div class='resource'>
+          <label class='resource-label'>Quantity</label>
+          <input type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
+        </div>
       </div>
-    </div>
   </header>
 
   {{! Sheet Tab Navigation }}

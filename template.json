@@ -124,7 +124,20 @@
         },
         "criticaldamagethreshold": {
           "value": 0
+        },
+        "armorasda": {
+          "value": 3
+        },
+        "helmetasda": {
+          "value": 2
+        },
+        "shieldasda": {
+          "value": 1
+        },
+        "shieldlocation": {
+          "value": ""
         }
+        
       }
     },
     "npc": {
@@ -167,7 +180,9 @@
       "companiontype":"",
       "companionquicknote":"",
       "monthlycost":"",
-      "role":""
+      "role":"",
+      "weapontype": "",
+      
     },
     "companion": {
       "templates": [
