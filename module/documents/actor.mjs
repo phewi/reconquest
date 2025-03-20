@@ -46,6 +46,9 @@ export class ReconQuestActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
+    //calculate shield on back asda = shield in hand / 2
+    systemData.combatstats.shieldonbackasda = Math.ceil(systemData.combatstats.shieldasda.value / 2);
+
 
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, ability] of Object.entries(systemData.abilities)) {

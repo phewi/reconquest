@@ -7,9 +7,9 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
-            data-label=""><i class='fas fa-dice-d20'></i></label><label
-            class="resource-label flexlarge align-left">Strength</label>
+          <label for="system.abilities.str.value" class="abilityd20icon rollable align-left"
+            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label=""><i
+              class='fas fa-dice-d20'></i></label><label class="resource-label flexlarge align-left">Strength</label>
           <input type="text" name="system.abilities.str.value" value="{{system.abilities.str.value}}"
             data-dtype="Number" />
         </div>
@@ -25,11 +25,13 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
-            data-label=""><i class='fas fa-dice-d20'></i></label><label
-            class="resource-label flexlarge align-left">Dexterity</label>
+          <label for="system.abilities.dex.value" class="abilityd20icon rollable align-left"
+            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label=""><i
+              class='fas fa-dice-d20'></i></label><label class="resource-label flexlarge align-left">Dexterity</label>
           <input type="text" name="system.abilities.dex.value" value="{{system.abilities.dex.value}}"
             data-dtype="Number" />
+
+            
         </div>
 
         <div class="ability flexrow flex-group-left">
@@ -50,7 +52,7 @@
       </div>
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
+          <label for="system.abilities.con.value" class="abilityd20icon rollable align-left" data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}"
             data-label=""><i class='fas fa-dice-d20'></i></label><label
             class="resource-label flexlarge align-left">Constitution</label>
           <input type="text" name="system.abilities.con.value" value="{{system.abilities.con.value}}"
@@ -137,11 +139,13 @@
 
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.asd.value" class="resource-label" title="dex dv + cr dv + armor dv + helmet dv + shield dv + -2 if afraid">Total DV Mêlée</label>
+          <label for="system.combatstats.asd.value" class="resource-label"
+            title="dex dv + cr dv + armor dv + helmet dv + shield dv + -2 if afraid">Total DV Mêlée</label>
           <input type="text" disabled name="system.combatstats.asd.value" value="🛡️NYI" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.asd.value" class="resource-label" title="10 + 2 size bonus for dwarf/halfling + dex dv + -2 if afraid">Total DV Missile</label>
+          <label for="system.combatstats.asd.value" class="resource-label"
+            title="10 + 2 size bonus for dwarf/halfling + dex dv + -2 if afraid">Total DV Missile</label>
           <input type="text" disabled name="system.combatstats.asd.value" value="🛡️NYI" data-dtype="Number" />
         </div>
 
@@ -325,6 +329,17 @@
           <label for="system.combatstats.shieldweight.value" class="resource-label">Weight</label>
           <input type="text" name="system.combatstats.shieldweight.value"
             value="{{system.combatstats.shieldweight.value}}" data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.combatstats.shieldlocation.value" class="resource-label">Shield</label>
+          <select name="system.combatstats.shieldlocation.value">
+              <option value="" {{#if (eq system.combatstats.shieldlocation.value "" )}}selected{{/if}}></option>
+              <option value="No Shield" {{#if (eq system.combatstats.shieldlocation.value "No Shield" )}}selected{{/if}}>No Shield</option>
+              <option value="In hand" {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}selected{{/if}}>In hand</option>
+              <option value="On back" {{#if (eq system.combatstats.shieldlocation.value "On back" )}}selected{{/if}}>On back
+              </option>
+          </select>
+          
         </div>
 
 
