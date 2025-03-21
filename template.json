@@ -26,6 +26,9 @@
       "attributes": {
         "level": {
           "value": 1
+        },
+        "dailyspells": {
+          "value": 0
         }
       },
       "abilities": {
@@ -130,6 +133,15 @@
         },
         "helmetasda": {
           "value": 2
+        },
+        "shield":{
+          "name": "",
+          "asda": 0,
+          "location":"",
+          "weight": 0,
+          "dvme": 0,
+          "dvmi": 0,
+          "block": 0
         },
         "shieldasda": {
           "value": 1

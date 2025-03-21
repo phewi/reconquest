@@ -6,6 +6,7 @@
         <h4>Physical</h4>
       </div>
       <div class="abilitycontainer">
+        {{!-- Strength --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.str.value" class="abilityd20icon rollable align-left"
             data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label="Strength"><i
@@ -29,16 +30,11 @@
         <div class="ability flexrow flex-group-left">
           {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
         </div>
-        <div class="ability flexrow flex-group-left">
-          OV MÊ: {{numberFormat system.abilities.str.ovme decimals=0 sign=true}}
-        </div>
+        
 
-        <div class="ability flexrow flex-group-left">
-          Carrying capacity: {{numberFormat system.abilities.str.carrycapacity decimals=0}}({{numberFormat
-          system.abilities.str.maximumcapacity decimals=0}}) lbs
-        </div>
       </div>
       <div class="abilitycontainer">
+        {{!-- Dexterity --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.dex.value" class="abilityd20icon rollable align-left"
             data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label="Dexterity"><i
@@ -81,6 +77,7 @@
         </div>
       </div>
       <div class="abilitycontainer">
+        {{!-- Constitution --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.con.value" class="abilityd20icon rollable align-left" data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}"
             data-label="Constitution"><i class='fas fa-dice-d20'></i></label><label
@@ -118,6 +115,7 @@
         <h4>Mental</h4>
       </div>
       <div class="abilitycontainer">
+        {{!-- Intelligence --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
             data-label=""><i class='fas fa-dice-d20'></i></label><label
@@ -125,16 +123,9 @@
           <input type="text" name="system.abilities.int.value" value="{{system.abilities.int.value}}"
             data-dtype="Number" />
         </div>
-
-        <div class="ability flexrow flex-group-left">
-          Daily spells: {{numberFormat system.abilities.int.dailyspells decimals=0}}
-        </div>
-
-        <div class="ability flexrow flex-group-left">
-          Extra languages: {{numberFormat system.abilities.int.extralanguages decimals=0}}
-        </div>
       </div>
       <div class="abilitycontainer">
+        {{!-- Willpower --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
             data-label=""><i class='fas fa-dice-d20'></i></label><label
@@ -144,6 +135,7 @@
         </div>
       </div>
       <div class="abilitycontainer">
+        {{!-- Charisma --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
             data-label=""><i class='fas fa-dice-d20'></i></label><label
@@ -348,6 +340,7 @@
 
       </div>
       <div class="combatstatcontainer resources grid grid-5col">
+        {{!-- Shield --}}
         <h3 class="grid-span-5">Shield</h3>
         <div class="resource flex-group-center">
           <label for="system.combatstats.shielddvme.value" class="resource-label">DV MÊ</label>
@@ -360,9 +353,9 @@
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.shieldblock.value" class="resource-label">Shield Block</label>
-          <input type="text" name="system.combatstats.shieldblock.value"
-            value="{{system.combatstats.shieldblock.value}}" data-dtype="Number" />
+          <label for="system.combatstats.shield.block" class="resource-label">Shield Block</label>
+          <input type="text" name="system.combatstats.shield.block"
+            value="{{system.combatstats.shield.block}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.shieldasda.value" class="resource-label"
@@ -426,6 +419,11 @@
       </div>
       <div class="widecontainer">
         <h2 class='section-header'>Spells</h2>
+        <span title="Based on INT + CR level"><label class="resource-label flexlarge align-left">Daily spells</label> 
+        <input type="text" name="system.attributes.dailyspells.value" value="{{system.attributes.dailyspells.value}}"
+              data-dtype="Number" />
+              {{system.attributes.dailyspells.value}}
+        </span>
         <ol class='items-list'>
           {{#each spells as |spells spellLevel|}}
           <li class='item flexrow items-header'>
@@ -558,7 +556,40 @@
       <label title="Copper pieces" for="system.currency.cp.value" class="resource-label flexlarge align-left">Copper
       </label>
       <input type="text" name="system.currency.cp.value" value="{{system.currency.cp.value}}" data-dtype="Number" />
-    </div>
+    </div>    
+    <h2 class='section-header'>Misc</h2>
+            <div class="resource flex-group-center">
+
+          <label for="system.age.value" class="resource-label">Age</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.age.value" value="{{system.age.value}}" data-dtype="Number" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+
+          <label for="system.height.value" class="resource-label">Height</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.height.value" value="{{system.height.value}}" data-dtype="Number" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+
+
+          <label for="system.weight.value" class="resource-label">Weight</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.weight.value" value="{{system.weight.value}}" data-dtype="Number" />
+          </div>
+        </div>
+
+<div class="ability flexrow flex-group-left">
+          OV MÊ: {{numberFormat system.abilities.str.ovme decimals=0 sign=true}}
+        </div>
+
+
+
+
+
+
   </div>
 
 </div>
