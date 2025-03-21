@@ -96,11 +96,7 @@
         <div class="resource flex-group-center">
           <label class="resource-label">Movement rate</label>
           <div class="resource-content flex-center flex-between">
-            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value " Dwarf"
-              )}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{#if (eq
-              system.attributes.combatrole.value "Halfling" )}}{{numberFormat
-              system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{numberFormat
-              system.abilities.str.totalmovementhumanelf decimals=0}}{{/if}}{{/if}}" data-dtype="Number" />
+            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value "Dwarf")}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{#if (eq system.attributes.combatrole.value "Halfling" )}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{numberFormat system.abilities.str.totalmovementhumanelf decimals=0}}{{/if}}{{/if}}" data-dtype="Number" />
             <div class="resource flex-group-center">{{#if (lt system.combatstats.armor.mr 0)}} {{numberFormat
               system.combatstats.armor.mr decimals=0}} from armor {{else}}{{#if (gt system.combatstats.armor.mr
               0)}}-{{numberFormat system.combatstats.armor.mr decimals=0}} from armor{{/if}}{{/if}} </div>
