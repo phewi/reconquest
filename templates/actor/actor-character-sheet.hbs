@@ -96,19 +96,39 @@
         <div class="resource flex-group-center">
           <label class="resource-label">Movement rate</label>
           <div class="resource-content flex-center flex-between">
-            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value "Dwarf")}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{#if (eq system.attributes.combatrole.value "Halfling" )}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{numberFormat system.abilities.str.totalmovementhumanelf decimals=0}}{{/if}}{{/if}}" data-dtype="Number" />
+            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value "Dwarf")}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}} ft{{else}}{{#if (eq system.attributes.combatrole.value "Halfling" )}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}} ft{{else}}{{numberFormat system.abilities.str.totalmovementhumanelf decimals=0}} ft{{/if}}{{/if}}" data-dtype="Number" />
             <div class="resource flex-group-center">{{#if (lt system.combatstats.armor.mr 0)}} {{numberFormat
               system.combatstats.armor.mr decimals=0}} from armor {{else}}{{#if (gt system.combatstats.armor.mr
               0)}}-{{numberFormat system.combatstats.armor.mr decimals=0}} from armor{{/if}}{{/if}} </div>
           </div>
         </div>
+        {{!-- Climbing rate --}}
         <div class="resource flex-group-center">
           <label title="Based on DEX" class="resource-label">Climbing rate</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input title="Based on DEX" type="text"
-              value="{{numberFormat system.abilities.dex.climbingrate decimals=0 }}" disabled data-dtype="Number" />
+              value="{{numberFormat system.abilities.dex.climbingrate decimals=0 }} ft" disabled data-dtype="Number" />
           </div>
         </div>
+        {{!-- Swimming rate --}}
+        <div class="resource flex-group-center">
+          <label title="Based on CON" class="resource-label">Swimming rate</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input title="Based on CON" type="text"
+              value="{{numberFormat system.abilities.con.swimmingrate decimals=0 }} ft" disabled data-dtype="Number" />
+          </div>
+        </div>
+        {{!-- Hold breath rate --}}
+        <div class="resource flex-group-center">
+          <label title="Based on CON" class="resource-label">Hold breath</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input title="Based on CON" type="text"
+              value="{{numberFormat system.abilities.con.holdbreath decimals=0 }} rounds" disabled data-dtype="Number" />
+          </div>
+        </div>
+
+              
+      {{!-- Carrying capacity --}}
         <div class="resource flex-group-center">
           <label title="Based on STR" class="resource-label">Carrying capacity(max)</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -116,7 +136,6 @@
           system.abilities.str.maximumcapacity decimals=0}}) lbs" disabled data-dtype="Number" />
           </div>
         </div>
-
       </div>
   </header>
 
