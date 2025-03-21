@@ -5,110 +5,57 @@
       <div class="abilitygrouplabel">
         <h4>Physical</h4>
       </div>
+
       <div class="abilitycontainer">
         {{!-- Strength --}}
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.str.value" class="abilityd20icon rollable align-left"
-            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label="Strength"><i
-              class='fas fa-dice-d20'></i></label><label class="resource-label flexlarge align-left">Strength</label>
-          <input type="text" name="system.abilities.str.value" value="{{system.abilities.str.value}}"
-            data-dtype="Number" />
+          <label for="system.abilities.str.value" class="resource-label flexlarge align-left">Strength</label>
+          <input class="abilityscore" type="text" name="system.abilities.str.value"
+            value="{{system.abilities.str.value}}" data-dtype="Number" />
         </div>
-        {{!-- Modifiers to roll --}}
-        <div class="ability flexrow flex-group-left">
-        <label class="resource-label flexlarge align-left">Roll modifiers:</label>
+        <div class="ability flexrow flex-group-center">
+          <label class="resource-label flexlarge align-left">Modifier:</label>
+          <input class="rollmod" type="text" name="system.abilities.str.rollmod"
+            value="{{system.abilities.str.rollmod}}" data-dtype="Number" />
         </div>
-        {{!-- Armor --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if system.combatstats.armorasda.value}}+{{system.combatstats.armorasda.value}} from armor{{/if}}
+        <div class="ability flexrow flex-group-center">
+          <button class="rollable" data-roll="d20+@abilities.str.rollmod{{#if (gt system.combatstats.armor.asda 0)}}+@combatstats.armor.asda{{/if}}{{#if (gt system.combatstats.helmet.asda 0)}}+@combatstats.helmet.asda{{/if}}{{#if (eq system.combatstats.shield.location "In hand" )}}+@combatstats.shield.asda{{/if}}{{#if (eq system.combatstats.shield.location "On back")}}+@combatstats.shield.asdaonback{{/if}}" data-label="<a href=''>Strength</a>">Roll Strength</button>
         </div>
-        {{!-- Helmet --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if system.combatstats.helmetasda.value}}+{{system.combatstats.helmetasda.value}} from helmet{{/if}}
-        </div>
-        {{!-- Shield --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
-        </div>
-        
-
       </div>
       <div class="abilitycontainer">
         {{!-- Dexterity --}}
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.dex.value" class="abilityd20icon rollable align-left"
-            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label="Dexterity"><i
-              class='fas fa-dice-d20'></i></label><label class="resource-label flexlarge align-left">Dexterity</label>
-          <input type="text" name="system.abilities.dex.value" value="{{system.abilities.dex.value}}"
-            data-dtype="Number" />
-
-            
+          <label for="system.abilities.dex.value" class="resource-label flexlarge align-left">Dexterity</label>
+          <input class="abilityscore" type="text" name="system.abilities.dex.value"
+            value="{{system.abilities.dex.value}}" data-dtype="Number" />
         </div>
-        {{!-- Modifiers to roll --}}
-        <div class="ability flexrow flex-group-left">
-        <label class="resource-label flexlarge align-left">Roll modifiers:</label>
+        <div class="ability flexrow flex-group-center">
+          <label class="resource-label flexlarge align-left">Modifier:</label>
+          <input class="rollmod" type="text" name="system.abilities.dex.rollmod"
+            value="{{system.abilities.dex.rollmod}}" data-dtype="Number" />
         </div>
-        {{!-- Armor --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if system.combatstats.armorasda.value}}+{{system.combatstats.armorasda.value}} from armor{{/if}}
-        </div>
-        {{!-- Helmet --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if system.combatstats.helmetasda.value}}+{{system.combatstats.helmetasda.value}} from helmet{{/if}}
-        </div>
-        {{!-- Shield --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
-        </div>
-        <div class="ability flexrow flex-group-left">
-          OV MI: {{numberFormat system.abilities.dex.ovmi decimals=0 sign=true}}
-        </div>
-
-        <div class="ability flexrow flex-group-left">
-          DV: {{numberFormat system.abilities.dex.dv decimals=0 sign=true}}
-        </div>
-
-        <div class="ability flexrow flex-group-left">
-          Initiative: {{numberFormat system.abilities.dex.dv decimals=0 sign=true}}
-        </div>
-
-        <div class="ability flexrow flex-group-left">
-          Climbing rate: {{numberFormat system.abilities.dex.climbingrate decimals=0 }} ft
+        <div class="ability flexrow flex-group-center">
+          <button class="rollable" data-roll="d20+@abilities.dex.rollmod{{#if (gt system.combatstats.armor.asda 0)}}+@combatstats.armor.asda{{/if}}{{#if (gt system.combatstats.helmet.asda 0)}}+@combatstats.helmet.asda{{/if}}{{#if (eq system.combatstats.shield.location "In hand" )}}+@combatstats.shield.asda{{/if}}{{#if (eq system.combatstats.shield.location "On back")}}+@combatstats.shield.asdaonback{{/if}}" data-label="<a href=''>Dexterity</a>">Roll Dexterity</button>
         </div>
       </div>
       <div class="abilitycontainer">
         {{!-- Constitution --}}
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.con.value" class="abilityd20icon rollable align-left" data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}"
-            data-label="Constitution"><i class='fas fa-dice-d20'></i></label><label
-            class="resource-label flexlarge align-left">Constitution</label>
-          <input type="text" name="system.abilities.con.value" value="{{system.abilities.con.value}}"
-            data-dtype="Number" />
+          <label for="system.abilities.con.value" class="resource-label flexlarge align-left">Constitution</label>
+          <input class="abilityscore" type="text" name="system.abilities.con.value"
+            value="{{system.abilities.con.value}}" data-dtype="Number" />
         </div>
-        {{!-- Modifiers to roll --}}
-        <div class="ability flexrow flex-group-left">
-        <label class="resource-label flexlarge align-left">Roll modifiers:</label>
+        <div class="ability flexrow flex-group-center">
+          <label class="resource-label flexlarge align-left">Modifier:</label>
+          <input class="rollmod" type="text" name="system.abilities.con.rollmod"
+            value="{{system.abilities.con.rollmod}}" data-dtype="Number" />
         </div>
-        {{!-- Armor --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if system.combatstats.armorasda.value}}+{{system.combatstats.armorasda.value}} from armor{{/if}}
-        </div>
-        {{!-- Helmet --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if system.combatstats.helmetasda.value}}+{{system.combatstats.helmetasda.value}} from helmet{{/if}}
-        </div>
-        {{!-- Shield --}}
-        <div class="ability flexrow flex-group-left">
-          {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
-        </div>
-        <div class="ability flexrow flex-group-left">
-          Swim rate: {{numberFormat system.abilities.con.swimmingrate decimals=0 }} ft
+        <div class="ability flexrow flex-group-center">
+          <button class="rollable" data-roll="d20+@abilities.con.rollmod{{#if (gt system.combatstats.armor.asda 0)}}+@combatstats.armor.asda{{/if}}{{#if (gt system.combatstats.helmet.asda 0)}}+@combatstats.helmet.asda{{/if}}{{#if (eq system.combatstats.shield.location "In hand" )}}+@combatstats.shield.asda{{/if}}{{#if (eq system.combatstats.shield.location "On back")}}+@combatstats.shield.asdaonback{{/if}}" data-label="<a href=''>Constitution</a>">Roll Constitution</button>
         </div>
 
-        <div class="ability flexrow flex-group-left">
-          Hold breath: {{numberFormat system.abilities.con.holdbreath decimals=0}} rounds
-        </div>
       </div>
+
     </div>
     <div class="abilitygroupcontainer">
       <div class="abilitygrouplabel">
@@ -117,41 +64,76 @@
       <div class="abilitycontainer">
         {{!-- Intelligence --}}
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
-            data-label=""><i class='fas fa-dice-d20'></i></label><label
-            class="resource-label flexlarge align-left">Intelligence</label>
-          <input type="text" name="system.abilities.int.value" value="{{system.abilities.int.value}}"
-            data-dtype="Number" />
+          <label for="system.abilities.int.value" class="resource-label flexlarge align-left">Intelligence</label>
+          <input class="abilityscore" type="text" name="system.abilities.int.value"
+            value="{{system.abilities.int.value}}" data-dtype="Number" />
+        </div>
+        <div class="ability flexrow flex-group-center">
+          <label class="resource-label flexlarge align-left">Modifier:</label>
+          <input class="rollmod" type="text" name="system.abilities.int.rollmod"
+            value="{{system.abilities.int.rollmod}}" data-dtype="Number" />
+        </div>
+        <div class="ability flexrow flex-group-center">
+          <button class="rollable" data-roll="d20+@abilities.int.rollmod" data-label="<a href=''>Intelligence</a>">Roll Intelligence</button>
         </div>
       </div>
       <div class="abilitycontainer">
         {{!-- Willpower --}}
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
-            data-label=""><i class='fas fa-dice-d20'></i></label><label
-            class="resource-label flexlarge align-left">Willpower</label>
-          <input type="text" name="system.abilities.wil.value" value="{{system.abilities.wil.value}}"
-            data-dtype="Number" />
+          <label for="system.abilities.wil.value" class="resource-label flexlarge align-left">Willpower</label>
+          <input class="abilityscore" type="text" name="system.abilities.wil.value"
+            value="{{system.abilities.wil.value}}" data-dtype="Number" />
+        </div>
+        <div class="ability flexrow flex-group-center">
+          <label class="resource-label flexlarge align-left">Roll modifier:</label>
+          <input class="rollmod" type="text" name="system.abilities.wil.rollmod"
+            value="{{system.abilities.wil.rollmod}}" data-dtype="Number" />
+        </div>
+        <div class="ability flexrow flex-group-center">
+          <button class="rollable" data-roll="d20+@abilities.wil.rollmod" data-label="<a href=''>Willpower</a>">Roll Willpower</button>
         </div>
       </div>
       <div class="abilitycontainer">
         {{!-- Charisma --}}
         <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.strength.value" class="abilityd20icon rollable align-left" data-roll="d20"
-            data-label=""><i class='fas fa-dice-d20'></i></label><label
-            class="resource-label flexlarge align-left">Charisma</label>
-          <input type="text" name="system.abilities.cha.value" value="{{system.abilities.cha.value}}"
-            data-dtype="Number" />
+          <label for="system.abilities.cha.value" class="resource-label flexlarge align-left">Charisma</label>
+          <input class="abilityscore" type="text" name="system.abilities.cha.value"
+            value="{{system.abilities.cha.value}}" data-dtype="Number" />
+        </div>
+        <div class="ability flexrow flex-group-center">
+          <label class="resource-label flexlarge align-left">Modifier:</label>
+          <input class="rollmod" type="text" name="system.abilities.cha.rollmod"
+            value="{{system.abilities.cha.rollmod}}" data-dtype="Number" />
+        </div>
+        <div class="ability flexrow flex-group-center">
+          <button class="rollable" data-roll="d20+@abilities.cha.rollmod" data-label="<a href=''>Charisma</a>">Roll Charisma</button>
         </div>
 
-        <div class="ability flexrow flex-group-left">
-          Max retainers: {{numberFormat system.abilities.cha.maxretainers}}
-        </div>
-        <div class="ability flexrow flex-group-left">
-          Max hirelings: {{numberFormat system.abilities.cha.maxhirelings}}
-        </div>
+       
       </div>
     </div>
+                  <div class="abilitymodifiercontainer">
+
+          {{!-- Modifiers to roll --}}
+          <div class="ability flexrow flex-group-left">
+            <label class="resource-label flexlarge align-left"> Automatically added roll modifiers to physical abilities:</label>
+          </div>
+          {{!-- Armor --}}
+          <div class="ability flexrow flex-group-left">
+            {{#if system.combatstats.armor.asda}}Armor: +{{system.combatstats.armor.asda}}{{/if}}
+          </div>
+          {{!-- Helmet --}}
+          <div class="ability flexrow flex-group-left">
+            {{#if system.combatstats.helmet.asda}}Helmet: +{{system.combatstats.helmet.asda}}{{/if}}
+          </div>
+          {{!-- Shield --}}
+          <div class="ability flexrow flex-group-left">
+            {{#if (eq system.combatstats.shield.location "In hand" )}}Shield in hand:
+            +{{system.combatstats.shield.asda}} {{/if}}{{#if (eq system.combatstats.shield.location "On back" )}}Shield
+            on back: +{{system.combatstats.shield.asdaonback}} {{/if}}
+          </div>
+
+        </div>
   </div>
   <div class="resource flex-group-center grid-span-6">
     <div class="widecontainer">
@@ -175,17 +157,41 @@
           <input type="text" name="system.abilities.dex.ovmi" disabled value="🏹NYI" data-dtype="Number" />
 
         </div>
+        
         <div class="resource flex-group-center">
           <label for="system.combatstats.asd.value" class="resource-label"
             title="dex dv + cr dv + armor dv + helmet dv + shield dv + -2 if afraid">Total DV Mêlée</label>
           <input type="text" disabled name="system.combatstats.asd.value" value="🛡️NYI" data-dtype="Number" />
         </div>
+        
         <div class="resource flex-group-center">
           <label for="system.combatstats.asd.value" class="resource-label"
             title="10 + 2 size bonus for dwarf/halfling + dex dv + -2 if afraid">Total DV Missile</label>
           <input type="text" disabled name="system.combatstats.asd.value" value="🛡️NYI" data-dtype="Number" />
+        </div> 
+        
+        <div class="resource flex-group-center">
+        <label for="system.combatstats.shield.location" class="resource-label">Shield</label>
+        <select name="system.combatstats.shield.location">
+          <option value="No Shield" {{#if (eq system.combatstats.shield.location "No Shield" )}}selected{{/if}}{{#if (eq
+            system.combatstats.shieldlocation.value "" )}}selected{{/if}}>No Shield</option>
+          <option value="In hand" {{#if (eq system.combatstats.shield.location "In hand" )}}selected{{/if}}>In hand
+          </option>
+          <option value="On back" {{#if (eq system.combatstats.shield.location "On back" )}}selected{{/if}}>On back
+          </option>
+        </select>        
         </div>
-
+        <div class="resource flex-group-center">
+          <label for="system.combatstats.attackrate.value" class="resource-label flexlarge align-left">Attack
+            rate</label>
+          <input type="text" name="system.combatstats.attackrate.value" value="{{system.combatstats.attackrate.value}}"
+            data-dtype="Text" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.combatstats.criticaldamagethreshold.value" class="resource-label">Dmg threshold</label>
+          <input type="text" name="system.combatstats.criticaldamagethreshold.value"
+            value="{{system.combatstats.criticaldamagethreshold.value}}" data-dtype="Number" />
+        </div>
       </div>
       <ol class='items-list'>
         <li class='item flexrow items-header'>
@@ -240,145 +246,128 @@
     </div>
     <div class="widecontainer">
 
-      <div class="combatstatcontainer resources grid grid-5col">
-        <h3 class="grid-span-5">Combat Statistics</h3>
+      <div class="combatstatcontainer resources grid grid-6col">
+        <h3 class="grid-span-6">Combat Statistics</h3>
+        {{!-- Base --}}
+        <div class="resource flex-group-center grid-span-2">
+          <label class="resource-label flexlarge align-left">Base</label>
+          <input style="display:none;" type="text" value="" />
+        </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.baseov.value" class="resource-label flexlarge align-left">Base
-            OV</label>
-          <input type="text" name="system.combatstats.baseov.value" value="{{system.combatstats.baseov.value}}"
+          <label for="system.combatstats.base.ov" class="resource-label flexlarge align-left">OV</label>
+          <input type="text" name="system.combatstats.base.ov" value="{{system.combatstats.base.ov}}"
             data-dtype="Number" />
         </div>
-
+      
+      
         <div class="resource flex-group-center">
-          <label for="system.combatstats.attackrate.value" class="resource-label flexlarge align-left">Attack
-            rate</label>
-          <input type="text" name="system.combatstats.attackrate.value" value="{{system.combatstats.attackrate.value}}"
-            data-dtype="Text" />
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.basedvme.value" class="resource-label">Base DV MÊ</label>
-          <input type="text" name="system.combatstats.basedvme.value" value="{{system.combatstats.basedvme.value}}"
+          <label for="system.combatstats.base.dvme" class="resource-label">DV MÊ</label>
+          <input type="text" name="system.combatstats.base.dvme" value="{{system.combatstats.base.dvme}}"
             data-dtype="Number" />
         </div>
-
+      
         <div class="resource flex-group-center">
-
-          <label for="system.combatstats.basedvmi.value" class="resource-label">Base DV MI</label>
-          <input type="text" name="system.combatstats.basedvmi.value" value="{{system.combatstats.basedvmi.value}}"
+      
+          <label for="system.combatstats.base.dvmi" class="resource-label">DV MI</label>
+          <input type="text" name="system.combatstats.base.dvmi" value="{{system.combatstats.base.dvmi}}"
             data-dtype="Number" />
         </div>
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.criticaldamagethreshold.value" class="resource-label">Damage threshold</label>
-          <input type="text" name="system.combatstats.criticaldamagethreshold.value"
-            value="{{system.combatstats.criticaldamagethreshold.value}}" data-dtype="Number" />
-        </div>
+      
       </div>
-
-      <div class="combatstatcontainer resources grid grid-5col">
-        <h3 class="grid-span-5">Armor</h3>
-
+<div class="resource flex-group-center"></div>
+<div class="resource flex-group-center"></div>
+      <div class="combatstatcontainer resources grid grid-6col">
+        
+        {{!-- Armor --}}
+        <div class="resource flex-group-center grid-span-2">
+          <label class="resource-label">Armor</label>
+          <input type="text" value="{{system.combatstats.armor.name}}"
+          />
+        </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.armordv.value" class="resource-label">DV</label>
-          <input type="text" name="system.combatstats.armordv.value" value="{{system.combatstats.armordv.value}}"
+          <label for="system.combatstats.armor.dv" class="resource-label">DV</label>
+          <input type="text" name="system.combatstats.armor.dv" value="{{system.combatstats.armor.dv}}"
             data-dtype="Number" />
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.combatstats.armormaxdex.value" class="resource-label">Max DEX</label>
-          <input type="text" name="system.combatstats.armormaxdex.value"
-            value="{{system.combatstats.armormaxdex.value}}" data-dtype="Number" />
+          <label for="system.combatstats.armor.maxdex" class="resource-label">Max DEX</label>
+          <input type="text" name="system.combatstats.armor.maxdex"
+            value="{{system.combatstats.armor.maxdex}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.armorasda.value" class="resource-label"
-            title="Ability Score Die Adjustment">ASDA</label>
-          <input type="text" name="system.combatstats.armorasda.value" value="{{system.combatstats.armorasda.value}}"
+          <label for="system.combatstats.armor.asda" class="resource-label" title="Ability Score Die Adjustment">ASDA</label>
+          <input type="text" name="system.combatstats.armor.asda" value="{{system.combatstats.armor.asda}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.armormr.value" class="resource-label">MR</label>
-          <input type="text" name="system.combatstats.armormr.value" value="{{system.combatstats.armormr.value}}"
+          <label for="system.combatstats.armor.mr" class="resource-label">MR</label>
+          <input type="text" name="system.combatstats.armor.mr" value="{{system.combatstats.armor.mr}}"
+            data-dtype="Number" />
+        </div>
+        
+        
+        {{!-- Helmet --}}
+        <div class="resource flex-group-center grid-span-2">
+          <label for="system.combatstats.helmet.name" class="resource-label">Helmet</label>
+          <input type="text" name="system.combatstats.helmet.name" value="{{system.combatstats.helmet.name}}"
+            />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.combatstats.helmet.dv" class="resource-label">DV</label>
+          <input type="text" name="system.combatstats.helmet.dv" value="{{system.combatstats.helmet.dv}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.armorweight.value" class="resource-label">Weight</label>
-          <input type="text" name="system.combatstats.armorweight.value"
-            value="{{system.combatstats.armorweight.value}}" data-dtype="Number" />
+          <label for="system.combatstats.helmet.maxdex" class="resource-label">Max DEX</label>
+          <input type="text" name="system.combatstats.helmet.maxdex"
+            value="{{system.combatstats.helmet.maxdex}}" data-dtype="Number" />
         </div>
-
-      </div>
-      <div class="combatstatcontainer resources grid grid-5col">
-        <h3 class="grid-span-5">Helmet</h3>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetdv.value" class="resource-label">DV</label>
-          <input type="text" name="system.combatstats.helmetdv.value" value="{{system.combatstats.helmetdv.value}}"
+          <label for="system.combatstats.helmet.asda" class="resource-label" title="Ability Score Die Adjustment">ASDA</label>
+          <input type="text" name="system.combatstats.helmet.asda" value="{{system.combatstats.helmet.asda}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetmaxdex.value" class="resource-label">Max DEX</label>
-          <input type="text" name="system.combatstats.helmetmaxdex.value"
-            value="{{system.combatstats.helmetmaxdex.value}}" data-dtype="Number" />
+          <label for="system.combatstats.helmet.ovmi" class="resource-label">OV MI</label>
+          <input type="text" name="system.combatstats.helmet.ovmi"
+            value="{{system.combatstats.helmet.ovmi}}" data-dtype="Number" />
         </div>
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetasda.value" class="resource-label"
-            title="Ability Score Die Adjustment">ASDA</label>
-          <input type="text" name="system.combatstats.helmetasda.value" value="{{system.combatstats.helmetasda.value}}"
-            data-dtype="Number" />
-        </div>
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetovmiperception.value" class="resource-label">OV MI / Perception</label>
-          <input type="text" name="system.combatstats.helmetovmiperception.value"
-            value="{{system.combatstats.helmetovmiperception.value}}" data-dtype="Number" />
-        </div>
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.helmetweight.value" class="resource-label">Weight</label>
-          <input type="text" name="system.combatstats.helmetweight.value"
-            value="{{system.combatstats.helmetweight.value}}" data-dtype="Number" />
-        </div>
+        
 
-
-
-      </div>
-      <div class="combatstatcontainer resources grid grid-5col">
         {{!-- Shield --}}
-        <h3 class="grid-span-5">Shield</h3>
+        <div class="resource flex-group-center grid-span-2">
+          <label for="system.combatstats.shield.name" class="resource-label">Shield</label>
+          <input type="text" name="system.combatstats.shield.name" value="{{system.combatstats.shield.name}}"
+            />
+        </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.shielddvme.value" class="resource-label">DV MÊ</label>
-          <input type="text" name="system.combatstats.shielddvme.value" value="{{system.combatstats.shielddvme.value}}"
+          <label for="system.combatstats.shield.dvme" class="resource-label">DV MÊ</label>
+          <input type="text" name="system.combatstats.shield.dvme" value="{{system.combatstats.shield.dvme}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.shielddvmi.value" class="resource-label">DV MI</label>
-          <input type="text" name="system.combatstats.shielddvmi.value" value="{{system.combatstats.shielddvmi.value}}"
+          <label for="system.combatstats.shield.dvmi" class="resource-label">DV MI</label>
+          <input type="text" name="system.combatstats.shield.dvmi" value="{{system.combatstats.shield.dvmi}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.shield.block" class="resource-label">Shield Block</label>
-          <input type="text" name="system.combatstats.shield.block"
-            value="{{system.combatstats.shield.block}}" data-dtype="Number" />
-        </div>
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.shieldasda.value" class="resource-label"
-            title="Ability Score Die Adjustment">ASDA</label>
-          <input type="text" name="system.combatstats.shieldasda.value" value="{{system.combatstats.shieldasda.value}}"
+          <label for="system.combatstats.shield.asda" class="resource-label" title="Ability Score Die Adjustment">ASDA</label>
+          <input type="text" name="system.combatstats.shield.asda" value="{{system.combatstats.shield.asda}}"
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.shieldweight.value" class="resource-label">Weight</label>
-          <input type="text" name="system.combatstats.shieldweight.value"
-            value="{{system.combatstats.shieldweight.value}}" data-dtype="Number" />
+          <label for="system.combatstats.shield.block" class="resource-label">Block</label>
+          <input type="text" name="system.combatstats.shield.block" value="{{system.combatstats.shield.block}}"
+            data-dtype="Number" />
         </div>
-        <div class="resource flex-group-center">
-          <label for="system.combatstats.shieldlocation.value" class="resource-label">Shield</label>
-          <select name="system.combatstats.shieldlocation.value">
-              <option value="" {{#if (eq system.combatstats.shieldlocation.value "" )}}selected{{/if}}></option>
-              <option value="No Shield" {{#if (eq system.combatstats.shieldlocation.value "No Shield" )}}selected{{/if}}>No Shield</option>
-              <option value="In hand" {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}selected{{/if}}>In hand</option>
-              <option value="On back" {{#if (eq system.combatstats.shieldlocation.value "On back" )}}selected{{/if}}>On back
-              </option>
-          </select>
-          
-        </div>
+
+        {{!-- <div class="resource flex-group-center">
+          <label for="system.combatstats.shield.weight" class="resource-label">Weight</label>
+          <input type="text" name="system.combatstats.shield.weight" value="{{system.combatstats.shield.weight}}"
+            data-dtype="Number" />
+        </div> --}}
+
 
 
 
@@ -419,11 +408,9 @@
       </div>
       <div class="widecontainer">
         <h2 class='section-header'>Spells</h2>
-        <span title="Based on INT + CR level"><label class="resource-label flexlarge align-left">Daily spells</label> 
-        <input type="text" name="system.attributes.dailyspells.value" value="{{system.attributes.dailyspells.value}}"
-              data-dtype="Number" />
-              {{system.attributes.dailyspells.value}}
-        </span>
+
+
+
         <ol class='items-list'>
           {{#each spells as |spells spellLevel|}}
           <li class='item flexrow items-header'>
@@ -458,13 +445,24 @@
           {{/each}}
           {{/each}}
         </ol>
+        <div class="combatstatcontainer resources grid grid-5col">
+          <div title="Based on INT + CR level" class="resource flex-group-center grid-span-1">
+            <label title="Based on INT + CR level" for="system.attributes.spells.daily" class="resource-label">Daily
+              spells</label>
+            <input type="text" name="system.attributes.spells.daily" value="{{system.attributes.spells.daily}}"
+              data-dtype="Number" />
+          </div>
+
+          <div title="Based on INT + CR level" class="resource flex-group-center grid-span-1">
+            <label title="Based on INT + CR level" for="system.attributes.spells.used" class="resource-label">Spells
+              used</label>
+            <input type="text" name="system.attributes.spells.used" value="{{system.attributes.spells.used}}"
+              data-dtype="Number" />
+          </div>
+        </div>
       </div>
     </div>
-    <h2>Notes</h2>
-    <div class="tab biography widecontainer notescontainer">
 
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
-    </div>
 
 
   </div>
@@ -556,39 +554,44 @@
       <label title="Copper pieces" for="system.currency.cp.value" class="resource-label flexlarge align-left">Copper
       </label>
       <input type="text" name="system.currency.cp.value" value="{{system.currency.cp.value}}" data-dtype="Number" />
-    </div>    
+    </div>
     <h2 class='section-header'>Misc</h2>
-            <div class="resource flex-group-center">
 
-          <label for="system.age.value" class="resource-label">Age</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.age.value" value="{{system.age.value}}" data-dtype="Number" />
-          </div>
+    <h4>str</h4>
+    <div class="ability flexrow flex-group-left">
+      OV MÊ: {{numberFormat system.abilities.str.ovme decimals=0 sign=true}}
+    </div>
+    <h4>dex</h4>
+    <div class="ability flexrow flex-group-left">
+      OV MI: {{numberFormat system.abilities.dex.ovmi decimals=0 sign=true}}
+    </div>
+
+    <div class="ability flexrow flex-group-left">
+      DV: {{numberFormat system.abilities.dex.dv decimals=0 sign=true}}
+    </div>
+
+    <div class="ability flexrow flex-group-left">
+      Initiative: {{numberFormat system.abilities.dex.dv decimals=0 sign=true}}
+    </div>
+
+    <div class="ability flexrow flex-group-left">
+      Climbing rate: {{numberFormat system.abilities.dex.climbingrate decimals=0 }} ft
+    </div>
+    <h4>con</h4>
+    <div class="ability flexrow flex-group-left">
+      Swim rate: {{numberFormat system.abilities.con.swimmingrate decimals=0 }} ft
+    </div>
+
+    <div class="ability flexrow flex-group-left">
+      Hold breath: {{numberFormat system.abilities.con.holdbreath decimals=0}} rounds
+    </div>
+    <h4>cha</h4>
+     <div class="ability flexrow flex-group-left">
+          Max retainers: {{numberFormat system.abilities.cha.maxretainers}}
         </div>
-        <div class="resource flex-group-center">
-
-          <label for="system.height.value" class="resource-label">Height</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.height.value" value="{{system.height.value}}" data-dtype="Number" />
-          </div>
+        <div class="ability flexrow flex-group-left">
+          Max hirelings: {{numberFormat system.abilities.cha.maxhirelings}}
         </div>
-        <div class="resource flex-group-center">
-
-
-          <label for="system.weight.value" class="resource-label">Weight</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.weight.value" value="{{system.weight.value}}" data-dtype="Number" />
-          </div>
-        </div>
-
-<div class="ability flexrow flex-group-left">
-          OV MÊ: {{numberFormat system.abilities.str.ovme decimals=0 sign=true}}
-        </div>
-
-
-
-
-
 
   </div>
 

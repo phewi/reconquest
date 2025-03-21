@@ -11,11 +11,6 @@
           "min": 0,
           "max": 10
         },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
         "biography": ""
       }
     },
@@ -27,28 +22,59 @@
         "level": {
           "value": 1
         },
-        "dailyspells": {
+        "experience": {
+          "value": 0
+        },
+        "spells": {
+          "daily": 0,
+          "used": 0
+        },
+        "combatrole": {
+          "value": ""
+        },
+        "sex": {
+          "value": ""
+        },
+        "size": {
+          "value": ""
+        },
+        "movementrate": {
+          "value": ""
+        },
+        "age": {
+          "value": 0
+        },
+        "height": {
+          "value": 0
+        },
+        "weight": {
           "value": 0
         }
       },
       "abilities": {
         "str": {
-          "value": 10
+          "value": 10,
+          "rollmod": 0
         },
         "dex": {
-          "value": 10
+          "value": 10,
+          "rollmod": 0
         },
         "con": {
-          "value": 10
+          "value": 10,
+          "rollmod": 0
         },
         "int": {
-          "value": 10
+          "value": 10,
+          "rollmod": 0
         },
         "wil": {
-          "value": 10
+          "value": 10,
+          "rollmod": 0
         },
         "cha": {
-          "value": 10
+          "value": 10,
+          "rollmod": 0
         }
       },
       "conditions": {
@@ -104,50 +130,44 @@
         }
       },
       "combatstats": {
-        "baseov": {
-          "value": 0
-        },
-        "basedvme": {
-          "value": 0
-        },
-        "basedvmi": {
-          "value": 0
-        },
-        "armordv": {
-          "value": 0
-        },
-        "helmetdv": {
-          "value": 0
-        },
-        "shielddvme": {
-          "value": 0
-        },
-        "shielddvmi": {
-          "value": 0
+        "base": {
+          "ov": 0,
+          "dvme": 0,
+          "dvmi": 0
         },
         "criticaldamagethreshold": {
           "value": 0
         },
-        "armorasda": {
-          "value": 3
+        "attackrate": {
+          "value": "0/0"
         },
-        "helmetasda": {
-          "value": 2
+        "armor": {
+          "name": "",
+          "dv": 0,
+          "maxdex": 0,
+          "asda": 0,
+          "mr": 0,
+          "weight": 0,
+          "location": ""
         },
-        "shield":{
+        "helmet": {
+          "name": "",
+          "dv": 0,
+          "maxdex": 0,
+          "asda": 0,
+          "weight": 0,
+          "ovmi": 0,
+          "perception": 0,
+          "location": ""
+        },
+        "shield": {
           "name": "",
           "asda": 0,
-          "location":"",
+          "location": "",
           "weight": 0,
           "dvme": 0,
           "dvmi": 0,
           "block": 0
-        },
-        "shieldasda": {
-          "value": 1
-        },
-        "shieldlocation": {
-          "value": ""
         }
       }
     },

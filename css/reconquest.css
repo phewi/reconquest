@@ -51,7 +51,14 @@ i.fas.fa-dice-d20 {
   padding: 5px;
   margin-bottom: 10px;
 }
-
+.abilitymodifiercontainer{
+  margin-top: 20px;
+}
+input.equipment-title {
+  background: none;
+  font-weight: bold;
+  color: black;
+}
 .abilitygrouplabel {}
 
 .combatstatcontainer {

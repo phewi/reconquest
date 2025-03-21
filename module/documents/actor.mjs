@@ -47,7 +47,7 @@ export class ReconQuestActor extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     //calculate shield on back asda = shield in hand / 2
-    systemData.combatstats.shieldonbackasda = Math.ceil(systemData.combatstats.shieldasda.value / 2);
+    systemData.combatstats.shield.asdaonback = Math.ceil(systemData.combatstats.shield.asda / 2);
 
 
     // Loop through ability scores, and add their modifiers to our sheet output.
@@ -103,7 +103,55 @@ export class ReconQuestActor extends Actor {
         default:
           ability.carrycapacity = 0;
       }
+      //str movementrate
 
+      switch (true) {
+        case (ability.value > 21):
+          ability.movementrate = 20;
+          ability.totalmovementdwarfhalfling = 45;
+          ability.totalmovementhumanelf = 50;
+          break;
+        case (ability.value === 20):
+          ability.movementrate = 15;
+          ability.totalmovementdwarfhalfling = 40;
+          ability.totalmovementhumanelf = 45;
+          break;
+        case (ability.value >= 18 && ability.value <= 19):
+          ability.movementrate = 10;
+          ability.totalmovementdwarfhalfling = 35;
+          ability.totalmovementhumanelf = 40;
+          break;
+        case (ability.value >= 15 && ability.value <= 17):
+          ability.movementrate = 5;
+          ability.totalmovementdwarfhalfling = 30;
+          ability.totalmovementhumanelf = 35;
+          break;
+        case (ability.value >= 7 && ability.value <= 14):
+          ability.movementrate = 0;
+          ability.totalmovementdwarfhalfling = 25;
+          ability.totalmovementhumanelf = 30;
+          break;
+        case (ability.value >= 4 && ability.value <= 6):
+          ability.movementrate = -5;
+          ability.totalmovementdwarfhalfling = 20;
+          ability.totalmovementhumanelf = 25;
+          break;
+        case (ability.value >= 2 && ability.value <= 3):
+          ability.movementrate = -10;
+          ability.totalmovementdwarfhalfling = 15;
+          ability.totalmovementhumanelf = 20;
+          break;
+        case (ability.value === 1):
+          ability.movementrate = -15;
+          ability.totalmovementdwarfhalfling = 10;
+          ability.totalmovementhumanelf = 15;
+          break;
+        default:
+          ability.movementrate = 0;
+          ability.totalmovementdwarfhalfling = 0;
+          ability.totalmovementhumanelf = 0;
+      }
+      
       // dex ovmi
       switch (true) {
         case (ability.value > 21):
@@ -291,13 +339,10 @@ export class ReconQuestActor extends Actor {
         default:
           ability.extralanguages = 0;
       }
-      
       //cha maxretainers & hirelings
       ability.maxretainers = Math.ceil(ability.value / 2);
       ability.maxhirelings = ability.value;
     }
-    
-
    
   }
 

@@ -5,7 +5,7 @@
       <h1 class='charname'><input name='name' type='text' value='{{item.name}}' placeholder='Name' /></h1>
       <div class='grid grid-4col'>
         <div class='resource grid-span-2'>
-          <label class='resource-label'>Weapon Type</label>
+          <label class='resource-label'>Type</label>
           <select name='system.weapontype'>
             <option value='' {{#if (eq system.weapontype "" )}}selected{{/if}}></option>
             {{! Melee weapons}}
@@ -30,6 +30,11 @@
               )}}selected{{/if}}>Thrown Concussion Weapons</option>
             <option value='Thrown Spears' {{#if (eq system.weapontype "Thrown Spears" )}}selected{{/if}}>Thrown Spears
             </option>
+            {{!-- Equipment --}}
+            <option disabled>-- Armor --</option>
+            <option value='Armor' {{#if (eq system.weapontype "Armor" )}}selected{{/if}}>Armor</option>
+            <option value='Helmet' {{#if (eq system.weapontype "Helmet" )}}selected{{/if}}>Helmet</option>
+            <option value='Shield' {{#if (eq system.weapontype "Shield" )}}selected{{/if}}>Shield</option>
 
           </select>
         </div>

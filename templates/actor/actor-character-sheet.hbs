@@ -13,6 +13,8 @@
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
+
+        {{!-- Health --}}
         <div class="resource flex-group-center">
           <label for="system.health.value" class="resource-label">Health</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -22,13 +24,16 @@
           </div>
         </div>
 
+        {{!-- Experience --}}
         <div class="resource flex-group-center">
-          <label for="system.experience.value" class="resource-label">Experience</label>
+          <label for="system.attributes.experience.value" class="resource-label">Experience</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.experience.value" value="{{system.experience.value}}" data-dtype="Number" />
+            <input type="text" name="system.attributes.experience.value" value="{{system.attributes.experience.value}}"
+              data-dtype="Number" />
           </div>
         </div>
 
+        {{!-- Level --}}
         <div class="resource flex-group-center">
           <label for="system.attributes.level.value" class="resource-label">Level</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -37,10 +42,7 @@
           </div>
         </div>
 
-
-
-
-
+        {{!-- Character Role --}}
         <div class="resource flex-group-center">
           <label for="system.attributes.combatrole.value" class="resource-label">Character Role</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -61,12 +63,11 @@
               </option>
               <option value="Warrior" {{#if (eq system.attributes.combatrole.value "Warrior" )}}selected{{/if}}>Warrior
               </option>
-
-
-
             </select>
           </div>
         </div>
+
+        {{!-- Sex --}}
         <div class="resource flex-group-center">
           <label for="system.attributes.sex.value" class="resource-label">Sex</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -77,6 +78,8 @@
             </select>
           </div>
         </div>
+
+        {{!-- Size --}}
         <div class="resource flex-group-center">
           <label for="system.attributes.size.value" class="resource-label">Size</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -88,22 +91,32 @@
             </select>
           </div>
         </div>
+
+        {{!-- Movement rate --}}
         <div class="resource flex-group-center">
-          <label for="system.movementrate.value" class="resource-label">Movement rate</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.movementrate.value" value="{{system.movementrate.value}}" data-dtype="Number" />
+          <label class="resource-label">Movement rate</label>
+          <div class="resource-content flex-center flex-between">
+            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value " Dwarf"
+              )}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{#if (eq
+              system.attributes.combatrole.value "Halfling" )}}{{numberFormat
+              system.abilities.str.totalmovementdwarfhalfling decimals=0}}{{else}}{{numberFormat
+              system.abilities.str.totalmovementhumanelf decimals=0}}{{/if}}{{/if}}" data-dtype="Number" />
+            <div class="resource flex-group-center">{{#if (lt system.combatstats.armor.mr 0)}} {{numberFormat
+              system.combatstats.armor.mr decimals=0}} from armor {{else}}{{#if (gt system.combatstats.armor.mr
+              0)}}-{{numberFormat system.combatstats.armor.mr decimals=0}} from armor{{/if}}{{/if}} </div>
           </div>
         </div>
         <div class="resource flex-group-center">
-          <label title="Based on DEX" for="system.climbingrate.value" class="resource-label">Climbing rate</label>
+          <label title="Based on DEX" class="resource-label">Climbing rate</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input title="Based on DEX" type="text" name="system.climbingrate.value" value="{{numberFormat system.abilities.dex.climbingrate decimals=0 }}" disabled data-dtype="Number" />
+            <input title="Based on DEX" type="text"
+              value="{{numberFormat system.abilities.dex.climbingrate decimals=0 }}" disabled data-dtype="Number" />
           </div>
         </div>
         <div class="resource flex-group-center">
-          <label title="Based on STR" for="system.climbingrate.value" class="resource-label">Carrying capacity(max)</label>
+          <label title="Based on STR" class="resource-label">Carrying capacity(max)</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input title="Based on STR" type="text" name="system.climbingrate.value" value="{{numberFormat system.abilities.str.carrycapacity decimals=0}}({{numberFormat
+            <input title="Based on STR" type="text" value="{{numberFormat system.abilities.str.carrycapacity decimals=0}}({{numberFormat
           system.abilities.str.maximumcapacity decimals=0}}) lbs" disabled data-dtype="Number" />
           </div>
         </div>
@@ -115,11 +128,13 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="features">Main</a>
-    <!--a class="item" data-tab="description">Description</a-->
+
     <!--a class="item" data-tab="items">Inventory</a-->
     <!--a class="item" data-tab="spells">Spells</a-->
-    <a class="item" data-tab="effects">Effects</a>
+
     <a class="item" data-tab="companions">Companions</a>
+    <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="description">Notes</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -147,10 +162,38 @@
       <div class="resources grid grid-5col">
         <div class="resource flex-group-center">
           <h2>Basic info</h2>
+          <div class="resource flex-group-center">
 
+            <label for="system.attributes.age.value" class="resource-label">Age</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.attributes.age.value" value="{{system.attributes.age.value}}"
+                data-dtype="Number" />
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+
+            <label for="system.attributes.height.value" class="resource-label">Height</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.attributes.height.value" value="{{system.attributes.height.value}}"
+                data-dtype="Number" />
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+
+
+            <label for="system.attributes.weight.value" class="resource-label">Weight</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.attributes.weight.value" value="{{system.attributes.weight.value}}"
+                data-dtype="Number" />
+            </div>
+          </div>
         </div>
         <div class="resource flex-group-center grid-span-4">
-          <h2>Biography</h2>
+          <h2>Notes</h2>
+          <div class="tab biography widecontainer notescontainer">
+
+            {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+          </div>
 
         </div>
       </div>
@@ -171,7 +214,7 @@
       {{> "systems/reconquest/templates/actor/parts/actor-effects.hbs"}}
     </div>
 
-    {{!-- Companions Tab --}} 
+    {{!-- Companions Tab --}}
     <div class="tab companions" data-group="primary" data-tab="companions">
       {{> "systems/reconquest/templates/actor/parts/actor-companions.hbs"}}
     </div>
