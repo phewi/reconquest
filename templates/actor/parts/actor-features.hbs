@@ -8,12 +8,27 @@
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.str.value" class="abilityd20icon rollable align-left"
-            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label=""><i
+            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label="Strength"><i
               class='fas fa-dice-d20'></i></label><label class="resource-label flexlarge align-left">Strength</label>
           <input type="text" name="system.abilities.str.value" value="{{system.abilities.str.value}}"
             data-dtype="Number" />
         </div>
-
+        {{!-- Modifiers to roll --}}
+        <div class="ability flexrow flex-group-left">
+        <label class="resource-label flexlarge align-left">Roll modifiers:</label>
+        </div>
+        {{!-- Armor --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if system.combatstats.armorasda.value}}+{{system.combatstats.armorasda.value}} from armor{{/if}}
+        </div>
+        {{!-- Helmet --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if system.combatstats.helmetasda.value}}+{{system.combatstats.helmetasda.value}} from helmet{{/if}}
+        </div>
+        {{!-- Shield --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
+        </div>
         <div class="ability flexrow flex-group-left">
           OV MÊ: {{numberFormat system.abilities.str.ovme decimals=0 sign=true}}
         </div>
@@ -26,14 +41,29 @@
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.dex.value" class="abilityd20icon rollable align-left"
-            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label=""><i
+            data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}" data-label="Dexterity"><i
               class='fas fa-dice-d20'></i></label><label class="resource-label flexlarge align-left">Dexterity</label>
           <input type="text" name="system.abilities.dex.value" value="{{system.abilities.dex.value}}"
             data-dtype="Number" />
 
             
         </div>
-
+        {{!-- Modifiers to roll --}}
+        <div class="ability flexrow flex-group-left">
+        <label class="resource-label flexlarge align-left">Roll modifiers:</label>
+        </div>
+        {{!-- Armor --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if system.combatstats.armorasda.value}}+{{system.combatstats.armorasda.value}} from armor{{/if}}
+        </div>
+        {{!-- Helmet --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if system.combatstats.helmetasda.value}}+{{system.combatstats.helmetasda.value}} from helmet{{/if}}
+        </div>
+        {{!-- Shield --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
+        </div>
         <div class="ability flexrow flex-group-left">
           OV MI: {{numberFormat system.abilities.dex.ovmi decimals=0 sign=true}}
         </div>
@@ -53,12 +83,27 @@
       <div class="abilitycontainer">
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.con.value" class="abilityd20icon rollable align-left" data-roll="d20+@combatstats.armorasda.value+@combatstats.helmetasda.value{{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+@combatstats.shieldasda.value{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+@combatstats.shieldonbackasda{{/if}}"
-            data-label=""><i class='fas fa-dice-d20'></i></label><label
+            data-label="Constitution"><i class='fas fa-dice-d20'></i></label><label
             class="resource-label flexlarge align-left">Constitution</label>
           <input type="text" name="system.abilities.con.value" value="{{system.abilities.con.value}}"
             data-dtype="Number" />
         </div>
-
+        {{!-- Modifiers to roll --}}
+        <div class="ability flexrow flex-group-left">
+        <label class="resource-label flexlarge align-left">Roll modifiers:</label>
+        </div>
+        {{!-- Armor --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if system.combatstats.armorasda.value}}+{{system.combatstats.armorasda.value}} from armor{{/if}}
+        </div>
+        {{!-- Helmet --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if system.combatstats.helmetasda.value}}+{{system.combatstats.helmetasda.value}} from helmet{{/if}}
+        </div>
+        {{!-- Shield --}}
+        <div class="ability flexrow flex-group-left">
+          {{#if (eq system.combatstats.shieldlocation.value "In hand" )}}+{{system.combatstats.shieldasda.value}} from shield{{/if}}{{#if (eq system.combatstats.shieldlocation.value "On back" )}}+{{system.combatstats.shieldonbackasda}} from shield{{/if}}
+        </div>
         <div class="ability flexrow flex-group-left">
           Swim rate: {{numberFormat system.abilities.con.swimmingrate decimals=0 }} ft
         </div>
