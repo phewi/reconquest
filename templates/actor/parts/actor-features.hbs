@@ -246,6 +246,7 @@
         {{/each}}
       </ol>
     </div>
+
       {{!-- Features --}}
       <div class="widecontainer">
         <h2 class='section-header'>Features</h2>
@@ -281,6 +282,7 @@
           {{/each}}
         </ol>
       </div>
+
       {{!-- Equipment --}}
       <div class="widecontainer">
         <h2 class="grid-span-6">Equipment</h2>
@@ -371,8 +373,6 @@
             data-dtype="Number" />
         </div>
 
-      
-      
         {{!-- Base --}}
         <div class="resource flex-group-center grid-span-2">
 
@@ -397,9 +397,6 @@
 
       <div class="widecontainer">
         <h2 class='section-header'>Spells</h2>
-
-
-
         <ol class='items-list'>
           {{#each spells as |spells spellLevel|}}
           <li class='item flexrow items-header'>
@@ -451,13 +448,13 @@
         </div>
       </div>
     </div>
-
-
-
   </div>
+
+
   <div class="resource flex-group-center grid-span-2">
     <div class="widecontainer">
 
+      {{!-- Conditions --}}
       <h2 class="section-header">Conditions</h2>
       <div class="ability flexrow flex-group-center flex-wrap">
         <label class="resource-label flexlarge align-left">Afraid</label>
@@ -520,6 +517,8 @@
         <input type="checkbox" name="system.conditions.submerged" {{#if system.conditions.submerged}}checked{{/if}}>
       </div>
     </div>
+
+    {{!-- Currency --}}
     <h2 class='section-header'>Currency</h2>
     <div class="ability flexrow flex-group-center">
       <label title="Aurichalcum pieces" for="system.currency.ap.value"
@@ -544,9 +543,9 @@
       </label>
       <input type="text" name="system.currency.cp.value" value="{{system.currency.cp.value}}" data-dtype="Number" />
     </div>
-    <h2 class='section-header'>Misc</h2>
+    {{!--<h2 class='section-header'>Misc</h2>
 
-    <h4>str</h4>
+     <h4>str</h4>
     <div class="ability flexrow flex-group-left">
       OV MÊ: {{numberFormat system.abilities.str.ovme decimals=0 sign=true}}
     </div>
@@ -561,7 +560,7 @@
 
     <div class="ability flexrow flex-group-left">
       Initiative: {{numberFormat system.abilities.dex.dv decimals=0 sign=true}}
-    </div>
+    </div> --}}
   </div>
 
 </div>

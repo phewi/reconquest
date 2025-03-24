@@ -51,10 +51,10 @@ export class ReconQuestActor extends Actor {
 
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, ability] of Object.entries(systemData.abilities)) {
-      
+
       // Calculate the modifier using d20 rules.
       ability.mod = Math.floor((ability.value - 10) / 2);
-      
+
       //str ov me
       switch (true) {
         case (ability.value >= 21):
@@ -104,8 +104,8 @@ export class ReconQuestActor extends Actor {
         default:
           ability.carrycapacity = 0;
       }
+      
       //str movementrate
-
       switch (true) {
         case (ability.value > 21):
           ability.movementrate = 20;
@@ -188,6 +188,7 @@ export class ReconQuestActor extends Actor {
         default:
           ability.ovmi = 0;
       }
+
       // dex dv & initiative
       switch (true) {
         case (ability.value > 21):
@@ -222,6 +223,7 @@ export class ReconQuestActor extends Actor {
           ability.dv = 0;
           ability.initiative = 0;
       }
+
       // dex climbingrate
       switch (true) {
         case (ability.value > 21):
@@ -245,6 +247,7 @@ export class ReconQuestActor extends Actor {
         default:
           ability.climbingrate = 0;
       }
+
       // con swimmingrate 
       switch (true) {
         case (ability.value > 20):
@@ -265,6 +268,7 @@ export class ReconQuestActor extends Actor {
         default:
           ability.swimmingrate = 0;
       }
+
       // con holdbreath
       switch (true) {
         case (ability.value > 20):
@@ -300,6 +304,7 @@ export class ReconQuestActor extends Actor {
         default:
           ability.holdbreath = 0;
       }
+
       //int dailyspells
       switch (true) {
         case (ability.value > 21):
@@ -323,6 +328,7 @@ export class ReconQuestActor extends Actor {
         default:
           ability.dailyspells = 0;
       }
+
       //int extralanguages
       switch (true) {
         case (ability.value > 21):
@@ -340,6 +346,7 @@ export class ReconQuestActor extends Actor {
         default:
           ability.extralanguages = 0;
       }
+      
       //cha maxretainers & hirelings
       ability.maxretainers = Math.ceil(ability.value / 2);
       ability.maxhirelings = ability.value;
@@ -368,11 +375,9 @@ export class ReconQuestActor extends Actor {
     systemData.combatstats.totaldvminoshield = systemData.combatstats.base.dvmi + systemData.combatstats.armor.dv + systemData.combatstats.helmet.dv;
 
     //total movement rates
-    
+
     systemData.abilities.str.totalmovementdwarfhalflingboo = systemData.abilities.str.totalmovementdwarfhalfling - systemData.combatstats.armor.mr;
     systemData.abilities.str.totalmovementhumanelfboo = systemData.abilities.str.totalmovementhumanelf - systemData.combatstats.armor.mr;
-           
-        
   }
 
   /**

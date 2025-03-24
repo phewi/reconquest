@@ -100,6 +100,7 @@
             {{!-- <div class="resource flex-group-center">{{#if (gt system.combatstats.armor.mr 0)}}-{{numberFormat system.combatstats.armor.mr decimals=0}} from armor{{/if}}</div> --}}
           </div>
         </div>
+
         {{!-- Climbing rate --}}
         <div class="resource flex-group-center">
           <label title="Based on DEX" class="resource-label">Climbing rate</label>
@@ -108,6 +109,7 @@
               value="{{numberFormat system.abilities.dex.climbingrate decimals=0 }} ft" disabled data-dtype="Number" />
           </div>
         </div>
+
         {{!-- Swimming rate --}}
         <div class="resource flex-group-center">
           <label title="Based on CON" class="resource-label">Swimming rate</label>
@@ -116,6 +118,7 @@
               value="{{numberFormat system.abilities.con.swimmingrate decimals=0 }} ft" disabled data-dtype="Number" />
           </div>
         </div>
+
         {{!-- Hold breath rate --}}
         <div class="resource flex-group-center">
           <label title="Based on CON" class="resource-label">Hold breath</label>
@@ -126,7 +129,6 @@
           </div>
         </div>
 
-
         {{!-- Carrying capacity --}}
         <div class="resource flex-group-center">
           <label title="Based on STR" class="resource-label">Carrying capacity(max)</label>
@@ -135,6 +137,7 @@
           system.abilities.str.maximumcapacity decimals=0}}) lbs" disabled data-dtype="Number" />
           </div>
         </div>
+        
         {{!-- Dmg threshold --}}
         <div title="For PCs 10, but 6 if Halfling"class="resource flex-group-center">
           <label for="system.combatstats.criticaldamagethreshold.value" class="resource-label">Damage threshold</label>
