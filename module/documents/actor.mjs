@@ -46,8 +46,7 @@ export class ReconQuestActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    //calculate shield on back asda = shield in hand / 2
-    systemData.combatstats.shield.asdaonback = Math.ceil(systemData.combatstats.shield.asda / 2);
+
 
 
     // Loop through ability scores, and add their modifiers to our sheet output.
@@ -343,7 +342,29 @@ export class ReconQuestActor extends Actor {
       ability.maxretainers = Math.ceil(ability.value / 2);
       ability.maxhirelings = ability.value;
     }
-   
+    
+    //calculate shield on back asda = shield in hand / 2
+    systemData.combatstats.shield.asdaonback = Math.ceil(systemData.combatstats.shield.asda / 2);
+
+    //total equipment mod to physical rolls
+    systemData.combatstats.totalequipasdanoshield = systemData.combatstats.armor.asda + systemData.combatstats.helmet.asda;
+    systemData.combatstats.totalequipasdainhand = systemData.combatstats.armor.asda + systemData.combatstats.helmet.asda + systemData.combatstats.shield.asda;
+    systemData.combatstats.totalequipasdaonback = systemData.combatstats.armor.asda + systemData.combatstats.helmet.asda + systemData.combatstats.shield.asdaonback;
+    
+    //total ov me
+    systemData.combatstats.totalovme = systemData.combatstats.base.ov + systemData.abilities.str.ovme;
+    
+    //total ov mi
+    systemData.combatstats.totalovmi = systemData.combatstats.base.ov + systemData.abilities.dex.ovmi;
+
+    //total dv me with and without shield
+    systemData.combatstats.totaldvme = systemData.combatstats.base.dvme + systemData.combatstats.armor.dv + systemData.combatstats.helmet.dv + systemData.combatstats.shield.dvme;
+    systemData.combatstats.totaldvmenoshield = systemData.combatstats.base.dvme + systemData.combatstats.armor.dv + systemData.combatstats.helmet.dv;
+    
+    //total dv mi with and without shield
+    systemData.combatstats.totaldvmi = systemData.combatstats.base.dvmi + systemData.combatstats.armor.dv + systemData.combatstats.helmet.dv + systemData.combatstats.shield.dvmi;
+    systemData.combatstats.totaldvminoshield = systemData.combatstats.base.dvmi + systemData.combatstats.armor.dv + systemData.combatstats.helmet.dv;
+    
   }
 
   /**
