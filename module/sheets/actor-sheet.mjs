@@ -239,16 +239,16 @@ export class ReconQuestActorSheet extends ActorSheet {
     const dataset = element.dataset;
     // Handle item rolls.
     if (dataset.rollType) {
-  /*    
-      //ctrl key
-      if (event.ctrlKey) {
-        alert("Ctrl key");
-      }
-      //shift key
-      if (event.shiftKey) {
-        alert("Shift key");
-      }
-*/
+      /*    
+          //ctrl key
+          if (event.ctrlKey) {
+            alert("Ctrl key");
+          }
+          //shift key
+          if (event.shiftKey) {
+            alert("Shift key");
+          }
+    */
       if (dataset.rollType == 'item') {
         const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);

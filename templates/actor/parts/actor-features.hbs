@@ -311,7 +311,7 @@
         </div>
         <div class="resource flex-group-center">
           <label for="system.combatstats.armor.mr" class="resource-label">MR</label>
-          <input type="text" name="system.combatstats.armor.mr" value="{{system.combatstats.armor.mr}}"
+          <input type="number" min="0" oninput="validity.valid||(value='');" name="system.combatstats.armor.mr" value="{{system.combatstats.armor.mr}}"
             data-dtype="Number" />
         </div>
         
@@ -371,7 +371,7 @@
             data-dtype="Number" />
         </div>
 
-      <div class="combatstatcontainer resources grid grid-6col">
+      
       
         {{!-- Base --}}
         <div class="resource flex-group-center grid-span-2">
@@ -392,12 +392,8 @@
           <label for="system.combatstats.base.ov" class="resource-label flexlarge align-left">Base <br>OV</label>
           <input type="text" name="system.combatstats.base.ov" value="{{system.combatstats.base.ov}}" data-dtype="Number" />
         </div>
+      
       </div>
-
-
-
-      </div>
-
 
       <div class="widecontainer">
         <h2 class='section-header'>Spells</h2>

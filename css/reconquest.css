@@ -28,16 +28,20 @@
   height: 24px;
   line-height: 28px;
 }
-input.quicknote{
+
+input.quicknote {
   text-align: left;
 }
+
 .sheet-tabs {
   /*display:none;*/
 }
-.abilityd20icon{
-  flex:0;
+
+.abilityd20icon {
+  flex: 0;
   margin-right: 5px;
 }
+
 i.fas.fa-dice-d20 {
   font-size: 18px;
 }
@@ -46,19 +50,27 @@ i.fas.fa-dice-d20 {
   border: none !important;
 }
 
+.abilityscore,
+.rollmod {
+  margin-bottom: 5px !important;
+}
+
 .abilitygroupcontainer {
   border: #666 1px solid;
   padding: 5px;
   margin-bottom: 10px;
 }
-.abilitymodifiercontainer{
+
+.abilitymodifiercontainer {
   margin-top: 20px;
 }
+
 input.equipment-title {
   background: none;
   font-weight: bold;
   color: black;
 }
+
 .abilitygrouplabel {}
 
 .combatstatcontainer {

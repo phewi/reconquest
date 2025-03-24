@@ -93,11 +93,11 @@
         </div>
 
         {{!-- Movement rate --}}
-        <div class="resource flex-group-center">
+        <div title="Movement rate from Character Role and Strength reduced by movement rate modifier (MR) from Armor"class="resource flex-group-center">
           <label class="resource-label">Movement rate</label>
           <div class="resource-content flex-center flex-between">
-            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value "Dwarf")}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}} ft{{else}}{{#if (eq system.attributes.combatrole.value "Halfling" )}}{{numberFormat system.abilities.str.totalmovementdwarfhalfling decimals=0}} ft{{else}}{{numberFormat system.abilities.str.totalmovementhumanelf decimals=0}} ft{{/if}}{{/if}}" data-dtype="Number" />
-            <div class="resource flex-group-center">{{#if (lt system.combatstats.armor.mr 0)}} {{numberFormat system.combatstats.armor.mr decimals=0}} from armor {{else}}{{#if (gt system.combatstats.armor.mr 0)}}-{{numberFormat system.combatstats.armor.mr decimals=0}} from armor{{/if}}{{/if}} </div>
+            <input type="text" name="" disabled value="{{#if (eq system.attributes.combatrole.value "Dwarf")}}{{numberFormat system.abilities.str.totalmovementdwarfhalflingboo decimals=0}} ft{{else}}{{#if (eq system.attributes.combatrole.value "Halfling" )}}{{numberFormat system.abilities.str.totalmovementdwarfhalflingboo decimals=0}} ft{{else}}{{numberFormat system.abilities.str.totalmovementhumanelfboo decimals=0}} ft{{/if}}{{/if}}" data-dtype="Number" />
+            {{!-- <div class="resource flex-group-center">{{#if (gt system.combatstats.armor.mr 0)}}-{{numberFormat system.combatstats.armor.mr decimals=0}} from armor{{/if}}</div> --}}
           </div>
         </div>
         {{!-- Climbing rate --}}
