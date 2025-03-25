@@ -55,6 +55,20 @@ i.fas.fa-dice-d20 {
   margin-bottom: 5px !important;
 }
 
+.conditionicons {
+  flex: 0 !important;
+}
+
+.conditionrow {
+  height: 2em;
+}
+
+a.effect-control {
+  flex: 0;
+}
+#token-hud .status-effects.active {
+  visibility: hidden;
+}
 .abilitygroupcontainer {
   border: #666 1px solid;
   padding: 5px;
