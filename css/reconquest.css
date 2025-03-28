@@ -69,6 +69,7 @@ a.effect-control {
 #token-hud .status-effects.active {
   visibility: hidden;
 }
+
 .abilitygroupcontainer {
   border: #666 1px solid;
   padding: 5px;
@@ -385,7 +386,7 @@ input.equipment-title {
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
+  overflow-y: visible;
   scrollbar-width: thin;
   color: #444;
 }

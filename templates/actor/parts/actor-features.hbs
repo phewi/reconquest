@@ -5,10 +5,8 @@
       <div class="abilitygrouplabel">
         <h4>Physical</h4>
       </div>
-
+      {{!-- Strength --}}
       <div class="abilitycontainer">
-        
-        {{!-- Strength --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.str.value" class="resource-label flexlarge align-left">Strength</label>
           <input class="abilityscore" type="text" name="system.abilities.str.value"
@@ -22,11 +20,9 @@
         <div class="ability flexrow flex-group-center">
           <button class="rollable" data-roll="d20+@abilities.str.rollmod{{#if (gt system.combatstats.armor.asda 0)}}+@combatstats.armor.asda{{/if}}{{#if (gt system.combatstats.helmet.asda 0)}}+@combatstats.helmet.asda{{/if}}{{#if (eq system.combatstats.shield.location "In hand" )}}+@combatstats.shield.asda{{/if}}{{#if (eq system.combatstats.shield.location "On back")}}+@combatstats.shield.asdaonback{{/if}}" data-label="<a href=''>Strength</a>">Roll Strength</button>
         </div>
-        
       </div>
+      {{!-- Dexterity --}}      
       <div class="abilitycontainer">
-
-        {{!-- Dexterity --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.dex.value" class="resource-label flexlarge align-left">Dexterity</label>
           <input class="abilityscore" type="text" name="system.abilities.dex.value"
@@ -41,9 +37,8 @@
           <button class="rollable" data-roll="d20+@abilities.dex.rollmod{{#if (gt system.combatstats.armor.asda 0)}}+@combatstats.armor.asda{{/if}}{{#if (gt system.combatstats.helmet.asda 0)}}+@combatstats.helmet.asda{{/if}}{{#if (eq system.combatstats.shield.location "In hand" )}}+@combatstats.shield.asda{{/if}}{{#if (eq system.combatstats.shield.location "On back")}}+@combatstats.shield.asdaonback{{/if}}" data-label="<a href=''>Dexterity</a>">Roll Dexterity</button>
         </div>
       </div>
+      {{!-- Constitution --}}
       <div class="abilitycontainer">
-
-        {{!-- Constitution --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.con.value" class="resource-label flexlarge align-left">Constitution</label>
           <input class="abilityscore" type="text" name="system.abilities.con.value"
@@ -66,9 +61,8 @@
       <div class="abilitygrouplabel">
         <h4>Mental</h4>
       </div>
+      {{!-- Intelligence --}}
       <div class="abilitycontainer">
-
-        {{!-- Intelligence --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.int.value" class="resource-label flexlarge align-left">Intelligence</label>
           <input class="abilityscore" type="text" name="system.abilities.int.value" value="{{system.abilities.int.value}}"
@@ -84,9 +78,8 @@
             Intelligence</button>
         </div>
       </div>
+      {{!-- Willpower --}}
       <div class="abilitycontainer">
-
-        {{!-- Willpower --}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.wil.value" class="resource-label flexlarge align-left">Willpower</label>
           <input class="abilityscore" type="text" name="system.abilities.wil.value" value="{{system.abilities.wil.value}}"
@@ -102,23 +95,22 @@
             Willpower</button>
         </div>
       </div>
-      <div class="abilitycontainer">
-
         {{!-- Charisma --}}
-        <div class="ability flexrow flex-group-center">
-          <label for="system.abilities.cha.value" class="resource-label flexlarge align-left">Charisma</label>
-          <input class="abilityscore" type="text" name="system.abilities.cha.value" value="{{system.abilities.cha.value}}"
-            data-dtype="Number" />
-        </div>
-        <div class="ability flexrow flex-group-center">
-          <label class="resource-label flexlarge align-left">Modifier:</label>
-          <input class="rollmod" type="text" name="system.abilities.cha.rollmod" value="{{system.abilities.cha.rollmod}}"
-            data-dtype="Number" />
-        </div>
-        <div class="ability flexrow flex-group-center">
-          <button class="rollable" data-roll="d20+@abilities.cha.rollmod" data-label="<a href=''>Charisma</a>">Roll
-            Charisma</button>
-        </div>
+        <div class="abilitycontainer">
+          <div class="ability flexrow flex-group-center">
+            <label for="system.abilities.cha.value" class="resource-label flexlarge align-left">Charisma</label>
+            <input class="abilityscore" type="text" name="system.abilities.cha.value" value="{{system.abilities.cha.value}}"
+              data-dtype="Number" />
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <label class="resource-label flexlarge align-left">Modifier:</label>
+            <input class="rollmod" type="text" name="system.abilities.cha.rollmod" value="{{system.abilities.cha.rollmod}}"
+              data-dtype="Number" />
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <button class="rollable" data-roll="d20+@abilities.cha.rollmod" data-label="<a href=''>Charisma</a>">Roll
+              Charisma</button>
+          </div>
     
     
       </div>
@@ -456,105 +448,32 @@
 
       {{!-- Conditions --}}
       <h2 class="section-header">Conditions</h2>
-
+      
       <ol class="items-list effects-list">
-  {{#each effects as |section sid|}}
-    <li class="items-header flexrow" data-effect-type="{{section.type}}" data-parent-id="{{@root.actor.id}}" >
-      <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
-      {{!-- <div class="effect-source">{{localize "RECON_QUEST.Effect.Source"}}</div> --}}
-      {{!-- <div class="effect-source">{{localize "EFFECT.TabDuration"}}</div> --}}
-      <div class="item-controls effect-controls flexrow">
-        <a class="effect-control" data-action="create" title="{{localize 'DOCUMENT.Create' type="Effect"}}">
-          <i class="fas fa-plus"></i>
-        </a>
-      </div>
-    </li>
-
-    <ol class="item-list">
-    {{#each section.effects as |effect|}}
-      <li class="item effect flexrow conditionrow" data-effect-id="{{effect.id}}" data-parent-id="{{effect.parent.id}}">
-        <div class="item-name effect-name flexrow">
-          {{!-- <img class="item-image" src="{{effect.icon}}"/> --}}
-          <a class="effect-control" data-action="toggle" title="{{localize 'RECON_QUEST.Effect.Toggle'}}"><h4>{{effect.name}}</h4></a>
-        </div>
-        {{!-- <div class="effect-source">{{effect.sourceName}}</div> --}}
-        {{!-- <div class="effect-duration">{{effect.duration.label}}</div> --}}
-        <div class="item-controls effect-controls flexrow conditionicons">
-          
-            
-          <a class="effect-control" data-action="edit" title="{{localize 'DOCUMENT.Update' type="Effect"}}">
-            <i class="fas fa-edit"></i>
-          </a>
-          <a class="effect-control" data-action="delete" title="{{localize 'DOCUMENT.Delete' type="Effect"}}">
-            <i class="fas fa-trash"></i>
-          </a>
-        </div>
-      </li>
-    {{/each}}
-    </ol>
-  {{/each}}
-</ol>
-
-      {{!-- <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Afraid</label>
-        <input type="checkbox" name="system.conditions.afraid" {{#if system.conditions.afraid}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Blinded</label>
-        <input type="checkbox" name="system.conditions.blinded" {{#if system.conditions.blinded}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Encumbered</label>
-        <input type="checkbox" name="system.conditions.encumbered" {{#if system.conditions.encumbered}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Entangled</label>
-        <input type="checkbox" name="system.conditions.entangled" {{#if system.conditions.entangled}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Helpless</label>
-        <input type="checkbox" name="system.conditions.helpless" {{#if system.conditions.helpless}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Poisoned</label>
-        <input type="checkbox" name="system.conditions.poisoned" {{#if system.conditions.poisoned}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Seriously Injured</label>
-        <input type="checkbox" name="system.conditions.seriouslyinjured" {{#if
-          system.conditions.seriouslyinjured}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Sick</label>
-        <input type="checkbox" name="system.conditions.sick" {{#if system.conditions.sick}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Soaking Wet</label>
-        <input type="checkbox" name="system.conditions.soakingwet" {{#if system.conditions.soakingwet}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Stunned</label>
-        <input type="checkbox" name="system.conditions.stunned" {{#if system.conditions.stunned}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Tired</label>
-        <input type="checkbox" name="system.conditions.tired" {{#if system.conditions.tired}}checked{{/if}}>
-      </div>
-
-      <div class="ability flexrow flex-group-center flex-wrap">
-        <label class="resource-label flexlarge align-left">Submerged</label>
-        <input type="checkbox" name="system.conditions.submerged" {{#if system.conditions.submerged}}checked{{/if}}>
-      </div> --}}
+        {{#each effects as |section sid|}}
+        <li class="items-header flexrow" data-effect-type="{{section.type}}" data-parent-id="{{@root.actor.id}}">
+          <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+          <div class="item-controls effect-controls flexrow">
+            <a class="effect-control" data-action="create" title="{{localize 'DOCUMENT.Create' type=" Effect"}}">
+              <i class="fas fa-plus"></i>
+            </a>
+          </div>
+        </li>
+      
+        <ol class="item-list">
+          {{#each section.effects as |effect|}}
+          <li class="item effect flexrow conditionrow" data-effect-id="{{effect.id}}" data-parent-id="{{effect.parent.id}}">
+            <div class="item-name effect-name flexrow">
+              <img class="item-image" src="{{effect.icon}}" />
+              <a class="effect-control" data-action="toggle" title="{{localize 'RECON_QUEST.Effect.Toggle'}}">
+                <h4>{{effect.name}}</h4>
+              </a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        {{/each}}
+      </ol>
     </div>
 
     {{!-- Currency --}}
