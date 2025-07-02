@@ -8,7 +8,7 @@
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns. --}}
-      <div class="resources grid grid-4col">
+      <div class="resources grid grid-7col">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
@@ -54,7 +54,7 @@
         <div class="resource flex-group-center">
           <label for="system.damage.value" class="resource-label">Damage</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.damage.value" value="{{system.damage.value}}" data-dtype="Text" />
+            <input type="text" name="system.damage.value" value="{{system.damage.value}}" data-dtype="Text" /><br>
           </div>
         </div>
 
@@ -64,14 +64,14 @@
             <input type="text" name="system.dv.value" value="{{system.dv.value}}" data-dtype="Text" />
           </div>
         </div>
-
+        <div class="resource flex-group-center grid-span-4"></div>
         <div class="resource flex-group-center">
-          <label for="system.hp.value" class="resource-label">HP</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Text" />
-          </div>
+          <button class="rollable" data-roll="d20+@ov.value" data-label="<a href=''>Attack</a>">Attack</button>
         </div>
 
+        <div class="resource flex-group-center">
+          <button class="rollable" data-roll="@damage.value" data-label="<a href=''>Damage</a>">Damage</button>
+        </div>
       </div>
     </div>
   </header>
@@ -89,8 +89,41 @@
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
+
+      <div class="resources grid grid-10col">
+  <div class="grid-span-8">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
       {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+            
+      </div> 
+      <div class="resource flex-group-center grid-span-2">
+        <h2 class="section-header">Conditions</h2>
+      <ol class="items-list effects-list">
+        {{#each effects as |section sid|}}
+        <li class="items-header flexrow" data-effect-type="{{section.type}}" data-parent-id="{{@root.actor.id}}">
+          <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+          <div class="item-controls effect-controls flexrow">
+            <a class="effect-control" data-action="create" title="{{localize 'DOCUMENT.Create' type=" Effect"}}">
+              <i class="fas fa-plus"></i>
+            </a>
+          </div>
+        </li>
+      
+        <ol class="item-list">
+          {{#each section.effects as |effect|}}
+          <li class="item effect flexrow conditionrow" data-effect-id="{{effect.id}}" data-parent-id="{{effect.parent.id}}">
+            <div class="item-name effect-name flexrow">
+              <img class="item-image" src="{{effect.icon}}" />
+              <a class="effect-control" data-action="toggle" title="{{localize 'RECON_QUEST.Effect.Toggle'}}">
+                <h4>{{effect.name}}</h4>
+              </a>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        {{/each}}
+      </ol>
+      </div>
     </div>
 
     {{!-- Owned Items Tab --}}

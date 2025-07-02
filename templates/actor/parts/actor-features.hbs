@@ -218,13 +218,20 @@
         {{#each gear as |item id|}}
         <li class='item flexrow' data-item-id='{{item._id}}'>
           <div class='item-name'>
+            {{!-- Attack Roll --}}
             <div class='item-controls item-announce'>
-              <a {{#if item.system.damage}}class='rollable' {{/if}} data-roll-type='item'>{{#if item.system.damage}}<i
-                  class='fas fa-dice-d20'></i>{{/if}}</a>
+              <a {{#if item.system.damage}}class='rollable'{{/if}} data-roll="1d20+@combatstats.totalovme" data-label="{{item.name}}: Attack">
+                {{#if item.system.damage}}<i class='fas fa-dice-d20'></i>{{/if}}
+              </a>
             </div>
             <h4>{{item.name}}</h4>
           </div>
-          <div class='item-damage item-prop'>{{item.system.damage}}</div>
+          {{!-- Damage Roll --}}
+          <div class='item-damage item-prop'>
+            <a {{#if item.system.damage}}class='rollable' {{/if}} data-roll="{{item.system.damage}}" data-label="{{item.name}}: Damage">{{#if item.system.damage}}{{item.system.damage}}{{/if}}</a>
+            
+
+          </div>
           <div class='item-reach item-prop'>{{item.system.reach}}</div>
           <div class='item-controls'>
             <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Item'}}'>
