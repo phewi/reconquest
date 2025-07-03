@@ -97,7 +97,9 @@
         "base": {
           "ov": 0,
           "dvme": 0,
-          "dvmi": 0
+          "dvmi": 0,
+          "ovme": 0,
+          "ovmi": 0
         },
         "criticaldamagethreshold": {
           "value": 0

@@ -360,11 +360,11 @@ export class ReconQuestActor extends Actor {
     systemData.combatstats.totalequipasdainhand = systemData.combatstats.armor.asda + systemData.combatstats.helmet.asda + systemData.combatstats.shield.asda;
     systemData.combatstats.totalequipasdaonback = systemData.combatstats.armor.asda + systemData.combatstats.helmet.asda + systemData.combatstats.shield.asdaonback;
 
-    //total ov me
-    systemData.combatstats.totalovme = systemData.combatstats.base.ov + systemData.abilities.str.ovme;
+    //total ov me 
+    systemData.combatstats.totalovme = systemData.combatstats.base.ovme + systemData.abilities.str.ovme;
 
     //total ov mi
-    systemData.combatstats.totalovmi = systemData.combatstats.base.ov + systemData.abilities.dex.ovmi;
+    systemData.combatstats.totalovmi = systemData.combatstats.base.ovmi + systemData.abilities.dex.ovmi;
 
     //total dv me with and without shield
     systemData.combatstats.totaldvme = systemData.combatstats.base.dvme + systemData.combatstats.armor.dv + systemData.combatstats.helmet.dv + systemData.combatstats.shield.dvme;
