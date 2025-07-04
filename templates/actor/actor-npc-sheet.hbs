@@ -8,7 +8,7 @@
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns. --}}
-      <div class="resources grid grid-7col">
+      <div class="resources grid grid-8col">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
@@ -62,6 +62,12 @@
           <label for="system.dv.value" class="resource-label">DV</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.dv.value" value="{{system.dv.value}}" data-dtype="Text" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.abilities.dex.initiative" class="resource-label" title="Initiative bonus">DEX</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.abilities.dex.initiative" value="{{system.abilities.dex.initiative}}" data-dtype="Text" />
           </div>
         </div>
         <div class="resource flex-group-center grid-span-4"></div>

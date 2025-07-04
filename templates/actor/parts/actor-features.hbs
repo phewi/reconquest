@@ -228,7 +228,7 @@
           </div>
           {{!-- Damage Roll --}}
           <div class='item-damage item-prop'>
-            <a {{#if item.system.damage}}class='rollable' {{/if}} data-roll="{{item.system.damage}}" data-label="{{item.name}}: Damage">{{#if item.system.damage}}{{item.system.damage}}{{/if}}</a>
+            <a {{#if item.system.damage}}class='rollable' {{/if}} data-roll="{{item.system.damage}}" data-label="<h3>{{item.name}}: Damage</h3>">{{#if item.system.damage}}{{item.system.damage}}{{/if}}</a>
             
 
           </div>
@@ -384,7 +384,7 @@
             data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
-          <label for="system.combatstats.base.ovmi" class="resource-label flexlarge align-left" title="10 + OV MI from DEX + OV ME from CR level (see Adjustments for Combat)">Base <br>OV MI</label>
+          <label for="system.combatstats.base.ovmi" class="resource-label flexlarge align-left" title="10 + OV MI from DEX + OV MI from CR level (see Adjustments for Combat)">Base <br>OV MI</label>
           <input type="text" name="system.combatstats.base.ovmi" value="{{system.combatstats.base.ovmi}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">

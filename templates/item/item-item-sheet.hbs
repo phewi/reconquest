@@ -3,18 +3,17 @@
     <!--img class='profile-img' src='{{item.img}}' data-edit='img' title='{{item.name}}' /-->
     <div class='header-fields'>
       <h1 class='charname'><input name='name' type='text' value='{{item.name}}' placeholder='Name' /></h1>
-      <div class='grid grid-4col'>
-        <div class='resource grid-span-2'>
+      <div class='grid grid-5col'>
+        
           <div class="resource">
           <label class='resource-label'>Type</label>
           <select name='system.weapontype'>
             <option value='' {{#if (eq system.weapontype "" )}}selected{{/if}}></option>
             <option value='Melee' {{#if (eq system.weapontype "Melee" )}}selected{{/if}}>Melee</option>
             <option value='Missile' {{#if (eq system.weapontype "Missile" )}}selected{{/if}}>Missile</option>
-            </option>
           </select>
           </div>
-        </div>
+        
         <div class='resource'>
           <label class='resource-label'>Damage</label>
           <input type='text' name='system.damage' value='{{system.damage}}' data-dtype='Text' />
